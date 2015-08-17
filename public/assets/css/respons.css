@@ -1,0 +1,86 @@
+@media (max-width: 1230px) {
+    #wraper{
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .menu .menu-li {
+        margin-bottom: 20px;
+    }
+    .footer .col-sm-6{
+        text-align: left;
+        margin: 5px 0;
+    }
+    .col-xs-12, .col-sm-12{
+        margin-bottom: 30px;
+    }
+    .col-xs-12:last-child, .col-sm-12:last-child{
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    #wraper{
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .home-header{
+        text-align: center;
+    }
+    .home-header .foto{
+        display: block;
+        margin: 0 auto;
+    }
+    .home-header .title{
+        margin-top: 0px;
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .home-header .sub-title {
+        line-height: 28px;
+        font-size: 20px;
+    }
+    .head .logo-page {
+        margin-right: 10px;
+    }
+    .head .title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .head .sub-title {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .block-grey {
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+    .skills .circle-progress-block {
+        display: block;
+        margin: 0 auto;
+    }
+    .footer .col-sm-6, .footer .col-xs-12{
+        text-align: center;
+    }
+}
+
+@media (max-width: 625px) {
+    .blog .post-user-info{
+        width: 100%;
+    }
+    .blog .post-comment-txt{
+        width: 100%;
+    }
+    .blog .post-comment-txt:after, .blog .post-comment-txt:before {
+        border: 0;
+    }
+    .blog .post iframe{
+        height: 197px;
+    }
+}

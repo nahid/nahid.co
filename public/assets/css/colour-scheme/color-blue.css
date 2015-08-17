@@ -1,0 +1,424 @@
+/* ==============================================
+
+Template: ukieCard
+Version: 1.0
+Author:	Ukieweb
+
+================================================ */
+
+/* ------------------
+    General setting
+--------------------*/
+body {
+    color: #000000;
+    background-color: #f5f5f5;
+
+    /* You can select background color */
+    /* background-color: #263238; */
+    /* background-color: #1e1f38; */
+    /* background-color: #cfd8dc; */
+    /* background-color: #383231; */
+    /* background-color: #ffffff; */
+}
+.ukie-icons {
+    color: #ffffff;
+    border-color: #FF7700;
+    background-color: #FF8800;
+}
+.ukie-icons:hover{
+    background-color: #FF5500;
+    color: #ffffff;
+}
+.btn{
+    background-color: #f5f5f5;
+    color: #000000;
+    border-color: #d1d1d1;
+}
+.btn:hover{
+    background-color: #d1d1d1;
+    color: #ffffff;
+}
+.btn-color{
+    border-color: #008fd9;
+    background-color: #00b6f9;
+    color: #ffffff;
+}
+.btn-color:hover{
+    background-color: #008fd9;
+    color: #ffffff;
+}
+.block-grey{
+    background-color: #fdfdfd;
+    border-color: #dfdfdf;
+}
+.border-bottom{
+    border-bottom-color: #ededed;
+}
+#wraper{
+    border-color: #c6c6c6;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ------------------
+    Home header
+--------------------*/
+.home-header .foto{
+    border-color: #6e6e6e;
+}
+
+/* ------------------
+    Menu section
+--------------------*/
+.menu .menu-li .name{
+    color: #000000;
+}
+
+/* ------------------
+    Footer section
+--------------------*/
+.footer{
+    border-top-color: #C6C6C6;
+}
+.footer a{
+    color: #000000;
+}
+.footer .ukie-icons{
+    border-color: #d6d6d6;
+    background-color: #f5f5f5;
+    color: #d6d6d6;
+}
+.footer a:hover{
+    color: #00b6f9;
+}
+.footer a:hover .ukie-icons{
+    border-color: #068cd6;
+    background-color: #00b6f9;
+    color: #ffffff;
+}
+.footer .copyright{
+    color: #c5c5c5;
+}
+
+
+/* ------------------
+    Home section
+--------------------*/
+.head{
+    border-bottom-color: #C6C6C6;
+}
+
+/* ------------------
+    Content
+--------------------*/
+.owl-theme .owl-controls .owl-buttons div {
+    background-color: #f5f5f5;
+    color: #c8c8c8;
+    border-color: #c8c8c8;
+}
+.owl-theme .owl-controls .owl-buttons div:hover{
+    color: #ffffff;
+    border-color: #068cd6;
+    background-color: #00b6f9;
+}
+
+/* ------------------
+    Skills section
+--------------------*/
+.skills .progress-bar{
+    background-color: #00b6f9;
+    border-color: #00b6f9;
+}
+.skills .progress{
+    background-color: #f5f5f5;
+    border-color: #dfdfdf;
+}
+.skills .progress-bar span{
+    color: #000000;
+    background: #fff;
+    border-color: #d6d6d6;
+}
+.skills .circle-progress-block input{
+    border: 1px solid #e3e3e3 !important;
+}
+
+/* ------------------
+    Portfolio
+--------------------*/
+.portfolio .within {
+    border-color: #959595;
+}
+.portfolio li {
+    color: #000000;
+    border-color: #dfdfdf;
+    background-color: #fcfcfc;
+}
+.portfolio li:hover{
+    border-color: #008cd6;
+}
+.portfolio li.active{
+    border-color: #008cd6;
+    color: #ffffff;
+    background-color: #00b6f9;
+}
+.portfolio-item .port-item-cont {
+    background: rgba(0, 182, 249, 0.90);
+}
+.portfolio-item:hover .within, .portfolio-item .within.touch {
+    border-color: #008cd6;
+}
+.portfolio-item .title{
+    color: #fff;
+}
+.portfolio-item .desc{
+    color: #fff;
+}
+.portfolio-item a.view-work {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #008cd6;
+}
+.portfolio-item a.view-work:hover{
+    background-color: #008cd6;
+    color: #ffffff;
+}
+
+.podrt-desc {
+    background-color: #fff;
+    border-color: #959595;
+    box-shadow: 0px 0px 50px #D2D2D2;
+}
+.podrt-desc img {
+    border-bottom-color: #959595;
+}
+.mfp-bg{
+    background-color: #ffffff;
+}
+.mfp-close-btn-in .mfp-close{
+    background-color: #fff;
+    border-color: #959595;
+}
+
+
+/* ------------------
+    Contact
+--------------------*/
+.contact-form input{
+    border-color: #dfdfdf;
+}
+.contact-form input.error{
+    border: 1px solid #d61516;
+}
+.contact-form input:focus, .contact-form textarea:focus{
+    border-color: #068cd6;
+}
+.contact-form input[type="submit"]{
+    border-color: #068cd6;
+}
+.contact-form .info-message-form{
+    background-color: #ffffff;
+    border-color: #dfdfdf;
+    color: #dfdfdf;
+}
+.contact-form .info-message-form.error{
+    background-color: #ff5151;
+    border-color: #d61516;
+    color: #ffffff;
+}
+.contact-form .info-message-form.success{
+    background-color: #5bb433;
+    border-color: #00690b;
+    color: #ffffff;
+}
+.contact-form textarea{
+    border-color: #dfdfdf;
+}
+.map{
+    border-color: #dfdfdf;
+}
+
+/* ------------------
+    Info
+--------------------*/
+.info .circle-block .icon{
+    color: #0abaf9;
+    border-color: #e9e9e9;
+}
+.info .circle-block:hover .icon{
+    border-color: #0a91d8;
+}
+.info .circle-block:hover .name{
+    color: #0ab9f8;
+}
+
+/* ------------------
+    Pricing
+--------------------*/
+.table-pricing .header-pricing{
+    border-color: #dfdfdf;
+    background-color: #fcfcfc;
+}
+.table-pricing.best-pricing .header-pricing{
+    color: #ffffff;
+    background-color: #00b6f9;
+    border-color: #008fd9;
+}
+.table-pricing .price-pricing{
+    border-color: #dfdfdf;
+}
+.table-pricing.best-pricing .price-pricing{
+    color: #00b6f9;
+}
+.table-pricing .properties-pricing li{
+    border-color: #dfdfdf;
+    border-bottom-color: #f5f5f5;
+}
+.table-pricing .properties-pricing .arrow-check{
+    color: #00b6f9;
+}
+.table-pricing .footer-pricing{
+    border-color: #dfdfdf;
+}
+
+/* ------------------
+    Blog
+--------------------*/
+.blog .post{
+    border-bottom-color: #ededed;
+}
+.blog .post .photo{
+    border-color: #959595;
+}
+.blog .post .btn-color-hover:hover{
+    color: #ffffff;
+    border-color: #068cd6;
+    background-color: #00b6f9;
+}
+.blog .post .txt-quote{
+    border-color: #ededed;
+    background-color: #fdfdfd;
+}
+.blog .post .txt-quote:before{
+    color: #00b6f8;
+}
+.post .entry-byline .fa{
+    color: #00b6f8;
+}
+.post .entry-byline a{
+    color: #000000;
+}
+.post .entry-byline .right-border{
+    border-right-color: #ededed;
+}
+.blog .post-pagination{
+    border-top-color: #ededed;
+}
+.blog .post-comments h3{
+    border-bottom-color: #ededed;
+}
+.blog .post-comment-txt{
+    border-color: #ededed;
+}
+.blog .post-comment-txt:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+}
+.blog .post-comment-txt:before {
+    border-color: rgba(237, 237, 237, 0);
+    border-right-color: #ededed;
+}
+.blog .post-comment-txt .comment-reply-link{
+    color: #000000;
+}
+.blog .post-comment-txt .comment-reply-link:hover{
+    color: #00b6f8;
+}
+.blog .post-comment-txt .comment-reply-link .fa{
+    color: #00b6f8;
+}
+.blog .leave-comment h3{
+    border-bottom-color: #ededed;
+}
+.blog .leave-comment .input-contact{
+    border-color: #dfdfdf;
+}
+
+/* ------------------
+    Widget
+--------------------*/
+.widget{
+    border-color: #ededed;
+    background-color: #fdfdfd;
+}
+
+.widget li{
+    border-top-color: #ededed;
+}
+
+.widget_categories li:before {
+    color: #00b6f8;
+}
+
+.widget a{
+    color: #000000;
+}
+.widget a:hover{
+    color: #00b6f8;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.widget_tag_cloud .tagcloud a{
+    color: #000000;
+    border-color: #dfdfdf;
+    background-color: #fcfcfc;
+}
+
+.widget_tag_cloud .tagcloud a:hover{
+    border-color: #008cd6;
+    color: #ffffff;
+    background-color: #00b6f9;
+}
+
+
+/* ------------------
+    Pagination
+--------------------*/
+.pagination .page-numbers{
+    border-color: #dfdfdf;
+    color: #000000;
+}
+.pagination .page-numbers.current {
+    background-color: #00b6f9;
+    border-color: #008cd6;
+    color: #fff;
+}
+.pagination .page-numbers:hover{
+    border-color: #008cd6;
+}
+
+/* ------------------
+    Total numbers
+--------------------*/
+.total-numbers .iconspace{
+    color: #00b6f9;
+    border-color: #dfdfdf;
+}
+.total-numbers .iconspace:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-left-color: #fff;
+}
+.total-numbers .iconspace:before {
+    border-color: rgba(223, 223, 223, 0);
+    border-left-color: #dfdfdf;
+}
+
+/* ------------------
+    Animationload
+--------------------*/
+.animationload {
+    background-color: #ffffff;
+}
