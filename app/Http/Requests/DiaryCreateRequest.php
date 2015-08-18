@@ -33,7 +33,7 @@ class DiaryCreateRequest extends Request
              'title'=>['required'],
              'content'=>['required'],
              'category'=>['required'],
-             'featured_image'=>['requuired', 'image']
+             'featured_image'=>['required', 'image']
           ];
     }
 

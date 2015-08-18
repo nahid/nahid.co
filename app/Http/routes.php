@@ -18,14 +18,22 @@ Route::controllers([
   ]);
 
 
-get('admin', function(){
-    return view('admin.layouts.master');
-});
+
 
 Route::group(['middleware'=>'admin', 'namespace'=>'Admin', 'prefix'=>'admin'], function(){
     Route::controllers([
         'diary'     =>      'DiaryController'
     ]);
+
+    get('/', function(){
+        return view('admin.layouts.master', [
+          'pageInfo'=>[
+            'siteTitle'=>'Dashboard',
+            'pageHeading'=>'Dashboard',
+            'pageHeadingSlogan'=>'I write here what I learn']
+
+          ]);
+    });
 });
 
 Route::get('login','LoginController@loginPage');

@@ -23,7 +23,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
         <li class="active">
-            <a href="index.html">
+            <a href="{{url('admin')}}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
@@ -34,7 +34,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i>New Diary</a></li>
+                <li><a href={{url('admin/diary/new')}}><i class="fa fa-angle-double-right"></i>New Diary</a></li>
                 <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i>All Diary</a></li>
                 <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Category</a></li>
             </ul>

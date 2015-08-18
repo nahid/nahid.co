@@ -29,8 +29,10 @@
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="{{asset('assets/js/AdminLTE/dashboard.js')}}" type="text/javascript"></script>
         <script src="{{asset('assets/js/markdown.js')}}" type="text/javascript"></script>
-        
-        <script src="{{asset('assets/js/bootstrap-markdown.js')}}" type="text/javascript"></script>
 
+        <script src="{{asset('assets/js/bootstrap-markdown.js')}}" type="text/javascript"></script>
+        <script type="text/javascript">
+          $("#textarea").markdown({autofocus:false})
+        </script>
     </body>
 </html>

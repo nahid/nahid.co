@@ -23,24 +23,28 @@ use App\Models\Comments;
 class DiaryController extends Controller
 {
 
-       public function getNew(){
+       public function getNew()
+       {
          $cat=Category::get();
 
          return view('admin.diary.newdiary', [
-           'pageInfo'=>[
-             'pageLogo'=>'diary',
-             'siteTitle'=>'New Diary',
-             'pageHeading'=>'New Diary',
-             'pageHeadingSlogan'=>'I write here what I learn']
+           'pageInfo'=>
+            [
+             'siteTitle'        =>'New Diary',
+             'pageHeading'      =>'New Diary',
+             'pageHeadingSlogan'=>'I write here what I learn'
+             ]
              ,
-             'data'=>[
-                'category'=>$cat
+             'data'=>
+             [
+                'category'      =>$cat
                ]
            ]);
        }
 
 
-      public function postNew(DiaryCreateRequest $req){
+      public function postNew(DiaryCreateRequest $req)
+      {
 
            $img=Image::make($req->file('featured_image'));
            $ext=$req->file('featured_image')->getClientOriginalExtension();
@@ -65,4 +69,40 @@ class DiaryController extends Controller
            }
 
       }
+
+     public function getCategory($id=null)
+     {
+       $cat=Category::get();
+
+       return view('admin.diary.category', [
+         'pageInfo'=>[
+           'siteTitle'=>'Category Manager',
+           'pageHeading'=>'Category Manager',
+           'pageHeadingSlogan'=>'I write here what I learn']
+           ,
+           'data'=>[
+              'category'=>$cat
+             ]
+         ]);
+     }
+
+     public function postCategory(Request $req)
+     {
+        $rules=[
+            'category_name'=>['required', 'min:2']
+          ];
+
+          $valid=Validator::make($req->input(), $rules);
+          if(!$valid->fails()){
+              $cat=new Category;
+              $cat->category_name=$req->input('category_name');
+              $cat->category_alias=strtolower(str_slug($req->input('category_name')));
+              if($cat->save()){
+                return redirect()->back()->with('msg','Successfully Saved Category');
+              }
+          }else{
+            return redirect()->back()->withErrors($valid->errors());
+          }
+     }
+
 }
