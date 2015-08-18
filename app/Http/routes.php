@@ -18,7 +18,11 @@ Route::controllers([
   ]);
 
 
-get('login','LoginController@loginPage');
+get('admin', function(){
+    return view('admin.layouts.master');
+});
+
+Route::get('login','LoginController@loginPage');
 
 Route::get('logout', 'LoginController@logout');
 

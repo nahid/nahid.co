@@ -37,6 +37,7 @@
 
                     <!-- start post comments -->
                     <div class="post-comments">
+                        <a name="comments"></a>
                         <h3>{{count($diary->comments)}} Comments</h3>
                         <div class="post-content-txt">
                 @foreach($comments as $comment)

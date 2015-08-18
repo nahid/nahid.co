@@ -148,6 +148,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Nahidz\Notify\NotifiyServiceProvider::class,
 
     ],
 
