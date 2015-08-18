@@ -6,6 +6,7 @@ use App\Events\CommentSentEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Nahidz\Notify\Notify;
+use Auth;
 
 class SendCommentMailListener
 {
@@ -31,11 +32,13 @@ class SendCommentMailListener
     {
         $notify=new Notify;
         $this->comment=$event->comment;
-        $msg=$this->comment->user->name.' comment your diary';
-        $link=url('diary/read/'.$this->comment->diary->id);
         $user=$this->comment->diary->user_id;
-        $img=$this->comment->user->image;
-        $notify->makeNotification($msg, $link, $user, $img);
+        if($user!=Auth::user()->id){
+            $msg=$this->comment->user->name.' comment your diary';
+            $link=url('diary/read/'.$this->comment->diary->id);
+            $img=$this->comment->user->image;
+            $notify->makeNotification($msg, $link, $user, $img);
+        }
 
     }
 }

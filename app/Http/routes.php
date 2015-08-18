@@ -22,6 +22,12 @@ get('admin', function(){
     return view('admin.layouts.master');
 });
 
+Route::group(['middleware'=>'admin', 'namespace'=>'Admin', 'prefix'=>'admin'], function(){
+    Route::controllers([
+        'diary'     =>      'DiaryController'
+    ]);
+});
+
 Route::get('login','LoginController@loginPage');
 
 Route::get('logout', 'LoginController@logout');
