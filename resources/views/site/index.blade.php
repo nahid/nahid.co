@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('site.layouts.front')
 
 @section('contents')
 <!-- start row -->

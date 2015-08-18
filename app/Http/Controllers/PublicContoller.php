@@ -17,7 +17,7 @@ class PublicContoller extends Controller
      */
     public function index()
     {
-        return View::make('index', ['pageInfo'=>['siteTitle'=>'The Alien']]);
+        return View::make('site.index', ['pageInfo'=>['siteTitle'=>'The Alien']]);
     }
 
     /**

@@ -30,7 +30,7 @@ class PartialServiceProvider extends ServiceProvider
 
 
     protected function sidebarCategory(){
-        view()->composer('partials.sidebar', function($view){
+        view()->composer('site.partials.sidebar', function($view){
             $view->with('navData', ['category'=>Category::get(), 'recents'=>Diary::take(5)->get(['title', 'id'])]);
         });
     }

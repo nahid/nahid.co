@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('site.layouts.master')
 
 @section('contents')
 @if(count($errors)>0)
@@ -32,5 +32,5 @@
     <input type="hidden" name="_token" value="{{csrf_token()}}">
     <button type="submit" class="btn btn-color">Save</button>
   </form>
-  
+
 @stop

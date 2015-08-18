@@ -26,7 +26,7 @@ class DiaryController extends Controller
    public function getIndex(){
      $diary=Diary::get();
 
-     return view('diary.diary', [
+     return view('site.diary.diary', [
        'pageInfo'=>[
          'pageLogo'=>'diary',
          'siteTitle'=>'Diary',
@@ -39,7 +39,7 @@ class DiaryController extends Controller
    public function getNew(){
      $cat=Category::get();
 
-     return view('diary.newdiary', [
+     return view('site.diary.newdiary', [
        'pageInfo'=>[
          'pageLogo'=>'diary',
          'siteTitle'=>'New Diary',
@@ -84,7 +84,7 @@ class DiaryController extends Controller
        $diary=Diary::find($id);
        $comments=Comments::where('diary_id', $id)->get();
 
-       return view('diary.read', [
+       return view('site.diary.read', [
          'pageInfo'=>[
            'pageLogo'=>'diary',
            'siteTitle'=>$diary->title,

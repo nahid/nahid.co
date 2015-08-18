@@ -1,4 +1,4 @@
-@include('partials.header')
+@include('site.partials.header')
 
     <!-- Load page -->
     <div class="animationload">
@@ -89,4 +89,4 @@
             <!-- end container -->
         </nav>
         <!-- End Menu section -->
-@include('partials.footer')
+@include('site.partials.footer')

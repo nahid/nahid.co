@@ -16,6 +16,12 @@ use Hash;
 
 class LoginController extends Controller
 {
+
+    public function loginPage(){
+        return view('site.login', [
+          'pageInfo'=>['pageLogo'=>'diary','siteTitle'=>'Login', 'pageHeading'=>'User Login', 'pageHeadingSlogan'=>'Here the place to authentication']
+         ]);
+    }
    protected function login($instance){
       $user=User::where('email', $instance->getEmail());
 

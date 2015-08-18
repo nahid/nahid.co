@@ -1,4 +1,4 @@
-@extends('layouts.others')
+@extends('site.layouts.others')
 
 @section('contents')
 <div class="info border-bottom padding-block text-center" style="border:0px;">

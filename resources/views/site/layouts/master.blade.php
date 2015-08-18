@@ -1,4 +1,4 @@
-@include('partials.header')
+@include('site.partials.header')
 
 <!-- Load page -->
 <div class="animationload">
@@ -39,10 +39,10 @@
                 <div class="col-xs-12 col-sm-12 col-lg-8">
                   @yield('contents')
                 </div>
-              @include('partials.sidebar')
+              @include('site.partials.sidebar')
             </div>
             <!-- end row -->
         </div>
         <!-- end container -->
     </section>
-@include('partials.footer')
+@include('site.partials.footer')
