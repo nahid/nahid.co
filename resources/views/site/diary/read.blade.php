@@ -28,10 +28,19 @@
                     <!-- end text post -->
 
                     <!-- start post pagination -->
-                    <div class="post-pagination">
-                        <a href="#" class="btn btn-color-hover hover-animate pre">Previews post</a>
-                        <a href="#" class="btn btn-color-hover hover-animate next">Next post</a>
-                    </div>
+
+    <div class="share-buttons" style="margin-top:50px; text-align:center;">
+        <h4>Share this diary</h4>
+		<!-- Facebook -->
+		<a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="icon-facebook-1"></i> Facebook</a>
+		<!-- Twitter -->
+		<a href="http://twitter.com/home?status=http://example.com/" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="icon-twitter-1"></i> Twitter</a>
+		<!-- Google+ -->
+		<a href="https://plus.google.com/share?url=http://example.com/" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="icon-gplus"></i> Google+</a>
+
+	</div>
+
+
                     <div class="clearfix"></div>
                     <!-- end post pagination -->
 

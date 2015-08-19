@@ -19,12 +19,12 @@
         <div class="social">
             <ul class="animated" data-animation="fadeIn" data-animation-delay="600">
                 <!-- social icons -->
-                <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-github"></i></a></li>
-                <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a target="_blank" class="ukie-icons hover-animate" href="http://fb.me/nahid.co"><i class="fa fa-facebook"></i></a></li>
+                <li><a target="_blank" class="ukie-icons hover-animate" href="http://twitter.com/NahidBinAzhar"><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" class="ukie-icons hover-animate" href="https://www.linkedin.com/in/nahidz"><i class="fa fa-linkedin"></i></a></li>
+                <li><a target="_blank" class="ukie-icons hover-animate" href="https://plus.google.com/+NahidBinAzhar"><i class="fa fa-google-plus"></i></a></li>
+                <li><a target="_blank" class="ukie-icons hover-animate" href="https://github.com/nahidz"><i class="fa fa-github"></i></a></li>
+                <li><a target="_blank" class="ukie-icons hover-animate" href="mailto:nahid.sms@live.com"><i class="fa fa-skype"></i></a></li>
                 <!--
                     <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-behance"></i></a></li>
                     <li><a class="ukie-icons hover-animate" href="#"><i class="fa fa-pinterest"></i></a></li>

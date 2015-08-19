@@ -28,6 +28,7 @@
     <!-- Responsive CSS -->
     <link type="text/css" media="all" href="{{asset('assets/css/respons.css')}}" rel="stylesheet" />
     <link type="text/css" media="all" href="{{asset('assets/css/bootstrap-markdown.min.css')}}" rel="stylesheet" />
+    <link type="text/css" media="all" href="{{asset('assets/css/social-sharing-buttons.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/github.min.css">
 
 
