@@ -49,6 +49,7 @@
 
     <script src="{{asset('assets/js/jquery-1.11.2.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/boostrap-files/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/js/jquery.countTo.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/jquery.appear.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/jquery.nicescroll.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/jquery.mixitup.min.js')}}" type="text/javascript"></script>

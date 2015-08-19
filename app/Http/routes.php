@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'PublicContoller@index');
+Route::get('/resume', 'PublicContoller@resumePage');
+
 
 Route::controllers([
       'diary'   =>    'DiaryController'
@@ -22,7 +24,8 @@ Route::controllers([
 
 Route::group(['middleware'=>'admin', 'namespace'=>'Admin', 'prefix'=>'admin'], function(){
     Route::controllers([
-        'diary'     =>      'DiaryController'
+        'diary'     =>      'DiaryController',
+        'resume'    =>      'WorkEduController'
     ]);
 
     get('/', function(){

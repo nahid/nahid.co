@@ -40,7 +40,7 @@
                         <!-- end menu block (profile) -->
 
                         <!-- start menu block (resume) -->
-                        <a href="resume.html" class="menu-li">
+                        <a href="{{url('/resume')}}" class="menu-li">
                             <!-- img menu block -->
                             <span class="foto">
                                 <img src="{{asset('assets/img/menu/resume.png')}}" class="menu-img" data-img-name="resume" alt="Ukieweb">

@@ -57,7 +57,8 @@
             </a>
             <ul class="treeview-menu">
                 <li><a href="pages/tables/simple.html"><i class="fa fa-angle-double-right"></i>Contact Info</a></li>
-                <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right"></i>Working Experience</a></li>
+                <li><a href="{{url('/admin/resume/edu')}}"><i class="fa fa-angle-double-right"></i>Manage Educations</a></li>
+                <li><a href="{{url('/admin/resume/work')}}"><i class="fa fa-angle-double-right"></i>Manage Works</a></li>
             </ul>
         </li>
 

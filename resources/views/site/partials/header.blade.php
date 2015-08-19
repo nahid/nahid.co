@@ -18,6 +18,8 @@
     <link type="text/css" media="all" href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
     <!-- Libs CSS -->
     <link type="text/css" media="all" href="{{asset('assets/boostrap-files/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/owl.carousel.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/owl.theme.css')}}" rel="stylesheet" type="text/css" />
     <!-- Animate CSS -->
     <link type="text/css" media="all" href="{{asset('assets/css/animate.css')}}" rel="stylesheet" />
     <!-- Template CSS -->
@@ -75,7 +77,7 @@
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Profile</a></li>
-              <li><a href="#about">Resume</a></li>
+              <li><a href="{{url('/resume')}}">Resume</a></li>
               <li><a href="#contact">Workfolio</a></li>
               <li><a href="#contact">Diary</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -83,7 +85,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{Auth::user()->image}}" style="width:19px; height:19px; border-radius:50%" /> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
+                  <li><a href="{{url('/admin')}}">Account</a></li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li role="separator" class="divider"></li>

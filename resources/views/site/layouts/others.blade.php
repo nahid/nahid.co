@@ -31,17 +31,7 @@
     </header>
     <!-- End Head section -->
 
-    <section class="blog padding-block">
-        <!-- start container -->
-        <div class="container">
-            <!-- start row -->
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-12">
-                  @yield('contents')
-                </div>
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
+
+        @yield('contents')
+
 @include('site.partials.footer')
