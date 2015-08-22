@@ -24,7 +24,7 @@ use App\Models\Comments;
 class DiaryController extends Controller
 {
    public function getIndex(){
-     $diary=Diary::get();
+     $diary=Diary::paginate(1);
 
      return view('site.diary.diary', [
        'pageInfo'=>[

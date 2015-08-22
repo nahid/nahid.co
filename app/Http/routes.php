@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\User;
+
 Route::get('/', 'PublicContoller@index');
 Route::get('/resume', 'PublicContoller@resumePage');
 
@@ -18,6 +20,8 @@ Route::get('/resume', 'PublicContoller@resumePage');
 Route::controllers([
       'diary'   =>    'DiaryController'
   ]);
+
+
 
 
 

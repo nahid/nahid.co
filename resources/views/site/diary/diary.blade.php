@@ -23,7 +23,7 @@
         <i class="fa fa-clock-o"></i>
         <time class="entry-published right-border">{{date('d/m/Y', strtotime($diary->created_at))}}</time>
         <i class="fa fa-comment"></i>
-        <span class="comments-link">30 Comments</span>
+        <span class="comments-link">{{count($diary->comments)}} Comments</span>
     </div>
     <!-- start desc post -->
     <p>{!!strShorten(Markdown::convertToHtml($diary->note), 50)!!}</p>
@@ -36,12 +36,17 @@
 
 <!-- start pagination -->
 <div class="pagination">
-    <span class="page-numbers current">1</span>
-    <a class="page-numbers" href="#">2</a>
-    <a class="page-numbers" href="#">3</a>
-    <span class="page-numbers dots">…</span>
-    <a class="page-numbers" href="#">9</a>
-    <a class="next page-numbers" href="#">Next »</a>
+<!--       <span class="page-numbers current">1</span>
+      <a class="page-numbers" href="#">2</a>
+      <a class="page-numbers" href="#">3</a>
+      <span class="page-numbers dots">…</span>
+      <a class="page-numbers" href="#">9</a> -->
+
+    @if($data->hasMorePages())
+
+      <a class="next page-numbers" href="{{$data->nextPageUrl()}}">Next »</a>
+
+    @endif
 </div>
 <!-- end pagination -->
 
