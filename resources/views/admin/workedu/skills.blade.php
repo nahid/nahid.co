@@ -8,7 +8,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
               <div class="box-header with-border">
-                <h3 class="box-title">Add New Education</h3>
+                <h3 class="box-title">Add New Skill</h3>
               </div><!-- /.box-header -->
               <!-- form start -->
 
@@ -33,7 +33,7 @@
 
                   <div class="form-group">
                     <label for="skill_level">Skill Level</label><span class="text-danger">*</span>
-                    <input type="number" name="skill_level" class="form-control"  placeholder="skill_level">
+                    <input type="number" name="skill_level" class="form-control"  placeholder="Skill Level">
                   </div>
                   <div class="form-group">
                     <label for="skill_type">Skill Type</label><span class="text-danger">*</span>
@@ -75,9 +75,9 @@
                     <tr>
                       <td>{{$skill->id}}</td>
                       <td>{{$skill->skill}}</td>
-                      <td>{{$skill->skill_range}}</td>
 
-                      <td><span class="badge bg-red">55%</span></td>
+                      <td><span class="badge bg-red">{{$skill->skill_range}}%</span></td>
+                      <td><a href="#">Edit</a></td>
                     </tr>
                       @endforeach
 

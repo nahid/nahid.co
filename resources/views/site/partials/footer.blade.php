@@ -68,6 +68,17 @@
 
             <script>hljs.initHighlightingOnLoad();</script>
 
+            <script type="text/javascript">
+
+
+                $('.social-btn').click(function(){
+                    var href=$(this).attr('href');
+                     window.open(href, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=500, height=450");
+                });
+
+
+            </script>
+
 
 </body>
 

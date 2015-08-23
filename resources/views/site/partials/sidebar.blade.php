@@ -5,7 +5,7 @@
         <h3 class="widget-title">Categories</h3>
         <ul>
             @foreach($navData['category'] as $cat)
-            <li class="cat-item cat-item-6"><a href="#">{{$cat->category_name}}</a></li>
+            <li class="cat-item cat-item-6"><a href="{{url('/diary/category/'.$cat->category_alias)}}">{{$cat->category_name}}</a></li>
             @endforeach
 
         </ul>
@@ -17,7 +17,7 @@
             @foreach($navData['recents'] as $recent)
             <li><a href="{{url('diary/read/'.$recent->id)}}">{{$recent->title}}</a></li>
             @endforeach
-            
+
         </ul>
     </aside>
 

@@ -24,7 +24,7 @@ use App\Models\Comments;
 class DiaryController extends Controller
 {
    public function getIndex(){
-     $diary=Diary::paginate(1);
+     $diary=Diary::paginate(10);
 
      return view('site.diary.diary', [
        'pageInfo'=>[
@@ -41,18 +41,20 @@ class DiaryController extends Controller
 
 
    public function getRead($id){
-       $diary=Diary::find($id);
-       $comments=Comments::where('diary_id', $id)->get();
+       $diary=Diary::with('comments')->find($id);
+       //$comments=Comments::where('diary_id', $id)->get();
 
        return view('site.diary.read', [
          'pageInfo'=>[
            'pageLogo'=>'diary',
            'siteTitle'=>$diary->title,
            'pageHeading'=>'Diary',
-           'pageHeadingSlogan'=>'I write here what I learn'
+           'pageHeadingSlogan'=>'I write here what I learn',
+           'siteImage'=>$diary->featured_image,
+           'siteContents'=>strShorten($diary->note, 200)
            ],
            'diary'=>$diary,
-           'comments'=>$comments
+           'comments'=>$diary->comments
          ]);
 
    }
@@ -66,5 +68,20 @@ class DiaryController extends Controller
        if($comment->save()){
            return redirect('diary/read/'. $req->input('diary_id').'#comment')->with('msg', 'Successfully comment posted');
        }
+   }
+
+
+   public function getCategory($aliasOrId){
+       $category=Category::where('id', $aliasOrId)->orWhere('category_alias', $aliasOrId)->firstOrFail();
+       $diary=Category::find($category->id)->diary()->paginate(10);
+
+       return view('site.diary.diary', [
+         'pageInfo'=>[
+           'pageLogo'=>'diary',
+           'siteTitle'=>'Diary | '.$category->category_name,
+           'pageHeading'=>'Diary | '.$category->category_name,
+           'pageHeadingSlogan'=>'I write here what I learn'],
+           'data'=>$diary
+         ]);
    }
 }

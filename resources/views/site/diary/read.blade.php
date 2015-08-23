@@ -32,11 +32,11 @@
     <div class="share-buttons" style="margin-top:50px; text-align:center;">
         <h4>Share this diary</h4>
 		<!-- Facebook -->
-		<a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="icon-facebook-1"></i> Facebook</a>
+		<a href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}" title="Share on Facebook" target="_blank" class="btn btn-facebook social-btn"><i class="icon-facebook-1"></i> Facebook</a>
 		<!-- Twitter -->
-		<a href="http://twitter.com/home?status=http://example.com/" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="icon-twitter-1"></i> Twitter</a>
+		<a href="http://twitter.com/home?status={{Request::url()}}" title="Share on Twitter" target="_blank" class="btn btn-twitter social-btn"><i class="icon-twitter-1"></i> Twitter</a>
 		<!-- Google+ -->
-		<a href="https://plus.google.com/share?url=http://example.com/" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="icon-gplus"></i> Google+</a>
+		<a href="https://plus.google.com/share?url={{Request::url()}}" title="Share on Google+" target="_blank" class="btn btn-googleplus social-btn"><i class="icon-gplus"></i> Google+</a>
 
 	</div>
 

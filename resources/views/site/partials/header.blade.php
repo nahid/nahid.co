@@ -9,10 +9,26 @@
 <!-- Mirrored from ukieweb.com/envato/ukiecard/style1/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 12 Aug 2015 11:15:14 GMT -->
 <head>
     <meta charset="utf-8" />
-    <title>NAH!D | {{$pageInfo['siteTitle']}}</title>
-    <meta name="author" content="ukieweb" />
-    <meta name="keywords" content="ukieCard, css3, template, html5 template" />
-    <meta name="description" content="ukieCard - Personal Vcard & Resume HTML Template" />
+    <title>{{$pageInfo['siteTitle']}} :: NAH!D</title>
+    <meta name="author" content="Nahid Bin Azhar" />
+    <meta name="keywords" content="nahid, bin, azhar, html5, php, laravel, laravel 5, blog, bangla blog, diary, angular js, web artisan, js, javascript, bangladesh, dhaka, barisal, bubt, bubt student" />
+    <meta name="description" content="Hi, This is NAHID from Southern Asia. I know, you are looking for an excellent & professional web developer. That's why I'm here for you right now! I've been working on PHP, jQuery, jQuery UI, Twitter Bootstrap and Laravel 4 for a long time. It's not me alone, I have a great team named CODESUM. If you have a job to be done, hand it over & RELAX forever... :)" />
+
+    <meta property="og:title" content="{{$pageInfo['siteTitle']}} :: NAH!D" />
+    <meta property="og:site_name" content="NAH!D | The Alien" />
+    <meta property="og:description"  content="{{isset($pageInfo['siteContents'])?$pageInfo['siteContents'] : 'Hi, This is NAHID from Southern Asia. I know, you are looking for an excellent & professional web developer. Thats why I am here for you right now! I have been working on PHP, jQuery, jQuery UI, Twitter Bootstrap and Laravel 4 for a long time. Its not me alone, I have a great team named CODESUM. If you have a job to be done, hand it over & RELAX forever... :)'}}" />
+
+    <meta  property="og:type" content="article" />
+    <meta  property="og:url" content="{{Request::url()}}" />
+    <meta  property="og:image" content="{{ isset($pageInfo['siteImage'])?asset('media/diary/'.$pageInfo['siteImage']) : asset('assets/img/nahid_avatar.jpg')}}" />
+
+    <meta name="google-site-verification" content="1_Y-hxUZol_K73c_qTrkVJbuWp9_YJYEIuwWL73edzc" />
+    <link href="https://plus.google.com/u/0/+NahidBinAzhar" rel="publisher">
+
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- Font Awesome -->
     <link type="text/css" media="all" href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
@@ -72,14 +88,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">NAH!D | The Alien</a>
+            <a class="navbar-brand" href="{{url('/')}}">NAH!D | The Alien</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Profile</a></li>
+              <li class="active"><a href="{{url('profile')}}">Profile</a></li>
               <li><a href="{{url('/resume')}}">Resume</a></li>
               <li><a href="#contact">Workfolio</a></li>
-              <li><a href="#contact">Diary</a></li>
+              <li><a href="{{url('/diary')}}">Diary</a></li>
               <li><a href="#contact">Contact</a></li>
               @if(Auth::check())
               <li class="dropdown">

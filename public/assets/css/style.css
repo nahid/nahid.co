@@ -1079,9 +1079,8 @@ a:hover, a:visited, a:focus, a:active{
 }
 
 .navbar-default {
-    background-color: #000;
+    background-color: rgba(248, 248, 248, 0.7) !important;
     border-color: #E7E7E7;
-    opacity: 0.7;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {

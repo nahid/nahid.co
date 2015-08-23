@@ -91,10 +91,10 @@ $(document).ready(function(){
      ----------------------------------------------------------------------
      */
     $("html").niceScroll({
-        cursorcolor: '#fff',
+        cursorcolor: '#666',
         cursoropacitymin: '0',
         cursoropacitymax: '1',
-        cursorwidth: '2px',
+        cursorwidth: '7px',
         zindex: 999999,
         horizrailenabled: false,
         enablekeyboard: false
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 thickness: .3,
                 inputColor: color,
                 bgColor: '#ffffff',
-                fgColor: color,
+                fgColor: '#FF7700',
                 'draw' : function () {
                     $(this.i).val(this.cv + '%')
                 }
@@ -238,25 +238,3 @@ $(document).ready(function(){
 
 
 }); // End $(document).ready(function(){
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

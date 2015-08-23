@@ -29,7 +29,7 @@
                     <div class="col-xs-12 col-sm-12 col-lg-12">
 
                         <!-- start menu block (profile) -->
-                        <a href="profile.html" class="menu-li">
+                        <a href="{{url('profile')}}" class="menu-li">
                             <!-- img menu block -->
                             <span class="foto">
                                 <img src="{{asset('assets/img/menu/profile.png')}}" class="menu-img" data-img-name="profile" alt="Ukieweb">

@@ -37,8 +37,8 @@ return [
 
     //social login services
     'facebook' => [
-      'client_id' => '381754925301140',
-      'client_secret' => 'ccc71fe8593ca6035628b56d08b7f0d1',
+      'client_id' => '147238062044135',
+      'client_secret' => '616d4979826bde1ac337baeeeae345af',
       'redirect' => 'http://localhost:8000/callback/facebook',
     ],
 

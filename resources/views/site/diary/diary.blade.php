@@ -26,7 +26,7 @@
         <span class="comments-link">{{count($diary->comments)}} Comments</span>
     </div>
     <!-- start desc post -->
-    <p>{!!strShorten(Markdown::convertToHtml($diary->note), 50)!!}</p>
+    <p>{!!strShorten(Markdown::convertToHtml($diary->note), 200)!!}</p>
     <!-- end desc post -->
     <a href="{{url('diary/read/'.$diary->id)}}" class="btn hover-animate btn-color-hover">Read More</a>
 </div>
@@ -42,9 +42,15 @@
       <span class="page-numbers dots">…</span>
       <a class="page-numbers" href="#">9</a> -->
 
+    @if($data->previousPageUrl())
+
+      <a class="next page-numbers" href="{{$data->previousPageUrl()}}"><< Previous</a>
+
+    @endif
+
     @if($data->hasMorePages())
 
-      <a class="next page-numbers" href="{{$data->nextPageUrl()}}">Next »</a>
+      <a class="next page-numbers" href="{{$data->nextPageUrl()}}">Next >></a>
 
     @endif
 </div>
