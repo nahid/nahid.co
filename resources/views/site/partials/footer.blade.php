@@ -71,9 +71,10 @@
             <script type="text/javascript">
 
 
-                $('.social-btn').click(function(){
+                $('.social-btn').click(function(event){
                     var href=$(this).attr('href');
-                     window.open(href, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=500, height=450");
+                     window.open(href, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=0, left=auto, width=550, height=400");
+                     event.preventDefault();
                 });
 
 
