@@ -73,7 +73,7 @@
                         <!-- end menu block (portfolio) -->
 
                         <!-- start menu block (contact) -->
-                        <a href="contact.html" class="menu-li">
+                        <a href="{{url('/contact')}}" class="menu-li">
                             <!-- img menu block -->
                             <span class="foto">
                                 <img src="{{asset('assets/img/menu/contact.png')}}" class="menu-img" data-img-name="contact" alt="Ukieweb">

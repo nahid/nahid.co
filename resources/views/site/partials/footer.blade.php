@@ -64,6 +64,9 @@
     <script src="{{asset('assets/js/to-bootstrap.js')}}" type="text/javascript"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+ <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="{{asset('assets/js/gmaps.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/js/prettify.js')}}" type="text/javascript"></script>
 
 
             <script>hljs.initHighlightingOnLoad();</script>
@@ -79,6 +82,26 @@
 
 
             </script>
+
+            <script type="text/javascript">
+    var map;
+    $(document).ready(function(){
+      prettyPrint();
+      map = new GMaps({
+        div: '#map',
+        lat: 23.803947,
+        lng: 90.352951
+      });
+      map.addMarker({
+        lat: 23.803947,
+        lng: 90.352951,
+        title: 'Nahid Bin Azhar',
+        infoWindow: {
+          content: '<div  align="center"><img src="{{asset("assets/img/nahid_avatar.jpg")}}" class="img-circle" width="70px" /><h2>Nahid Bin Azhar</h2>  <p><strong>codesum</strong>, Floor#4th(right), House#41, Road#3, Block#A, Section#2, Rainkhola, Mirpur, Dhaka-1216</p></div>'
+        }
+      });
+    });
+  </script>
 
 
 </body>

@@ -24,7 +24,7 @@
                         <span class="comments-link">{{count($diary->comments)}} Comments</span>
                     </div>
                     <!-- start text post -->
-                    {{Markdown::convertToHtml($diary->note)}}
+                    {!!Markdown::convertToHtml($diary->note)!!}
                     <!-- end text post -->
 
                     <!-- start post pagination -->

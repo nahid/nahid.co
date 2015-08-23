@@ -16,6 +16,7 @@ use App\Models\User;
 Route::get('/', 'PublicContoller@index');
 Route::get('/resume', 'PublicContoller@resumePage');
 Route::get('/profile', 'PublicContoller@profilePage');
+Route::get('/contact', 'PublicContoller@contactPage');
 
 
 Route::controllers([

@@ -62,4 +62,15 @@ class PublicContoller extends Controller
                     ]
             ]);
     }
+
+    public function contactPage(){
+        return View::make('site.contact', [
+                'pageInfo'=>[
+                        'siteTitle'=>'Contact',
+                        'pageHeading'=>'Contact',
+                        'pageHeadingSlogan'=>"Its the place where you can find me",
+                        'pageLogo'=>'contact'
+                    ]
+            ]);
+    }
 }
