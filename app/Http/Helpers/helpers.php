@@ -8,3 +8,8 @@ function strShorten($str, $length = 100, $end = '&#8230;')
         }
         return $str;
     }
+
+
+
+
+    //to html entities;  assume content is in the "content" variable
