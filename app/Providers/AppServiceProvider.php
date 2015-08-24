@@ -4,10 +4,12 @@ namespace App\Providers;
 
 use Event;
 use App\Models\Comments;
+use App\Models\Messages;
 
 use Illuminate\Support\ServiceProvider;
 
 use App\Events\CommentSentEvent;
+use App\Events\MessageSentEvent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Comments::created(function($comment){
             Event::fire(new CommentSentEvent($comment));
+        });
+
+        Messages::created(function($message){
+            Event::fire(new MessageSentEvent($message));
         });
     }
 

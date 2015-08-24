@@ -17,6 +17,7 @@ Route::get('/', 'PublicContoller@index');
 Route::get('/resume', 'PublicContoller@resumePage');
 Route::get('/profile', 'PublicContoller@profilePage');
 Route::get('/contact', 'PublicContoller@contactPage');
+Route::post('/message', 'PublicContoller@makeContactRequest');
 
 
 Route::controllers([

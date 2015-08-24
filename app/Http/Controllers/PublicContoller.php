@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\ContactRequest;
 use App\Http\Controllers\Controller;
 use View;
 use Illuminate\Support\Collection;
 
 use App\Models\WorkEdu;
 use App\Models\Skills;
+use App\Models\Messages;
 
 class PublicContoller extends Controller
 {
@@ -72,5 +74,17 @@ class PublicContoller extends Controller
                         'pageLogo'=>'contact'
                     ]
             ]);
+    }
+
+    public function makeContactRequest(ContactRequest $req){
+        $msg=new Messages;
+        $msg->name=$req->input('name');
+        $msg->email=$req->input('email');
+        $msg->message=$req->input('message');
+        $msg->status=0;
+
+        if($msg->save()){
+            return redirect()->back()->with('msg', 'ok');
+        }
     }
 }

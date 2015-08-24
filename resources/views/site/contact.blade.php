@@ -9,17 +9,31 @@
           <!-- start row -->
           <div class="row">
               <div class="col-xs-12 col-sm-12 col-lg-6">
+                  <h3 class="title title-contact">Map</h3>
                   <div id="map" class="map"></div>
               </div>
               <div class="col-xs-12 col-sm-12 col-lg-6">
                   <h3 class="title title-contact">Contact form</h3>
                   <!-- Start Contact Form -->
                   <div class="contact-form">
-                      <form action="http://ukieweb.com/envato/ukiecard/style1/assets/php/contact.php" id="contact-form" method="post">
-                          <input type="text" id="user-name" name="user-name" value="" placeholder="Name">
-                          <input type="email" id="user-email" name="user-email" value="" placeholder="Email">
-                          <textarea id="user-message" name="user-message" placeholder="Message"></textarea>
+                      @if(count($errors)>0)
+                      <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                          <li>{{$err}}</li>
+                        @endforeach
+                      </div>
+                      @endif
+                      @if(session('msg')=='ok')
+                      <div class="alert alert-success">
+                        Successfully Saved Diary
+                      </div>
+                      @endif
+                      <form action="{{url('/message')}}" id="contact-form" method="post">
+                          <input type="text" id="user-name" name="name" value="" placeholder="Name">
+                          <input type="email" id="user-email" name="email" value="" placeholder="Email">
+                          <textarea id="user-message" name="message" placeholder="Message"></textarea>
                           <div class="footer-form">
+                              <input type="hidden" name="_token"value="{{csrf_token()}}">
                               <input type="submit" class="btn btn-color hover-animate" value="Send Message">
                               <div class="info-message-form">
                                   <p>Please fill out all the fields!</p>
