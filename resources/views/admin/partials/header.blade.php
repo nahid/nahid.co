@@ -6,7 +6,7 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-        
+
         <!-- font Awesome -->
         <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
@@ -51,10 +51,46 @@
                         <!-- Messages: style can be found in dropdown.less-->
 
                         <!-- Notifications: style can be found in dropdown.less -->
+
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope"></i>
+                                @if(count($headerData['messages'])>0)
+                                <span class="label label-success">{{count($headerData['messages'])}}</span>
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have {{count($headerData['messages'])}} messages</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                      @foreach($headerData['messages'] as $msg)
+                                        <li><!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <img src="{{asset('assets/img/avatar5.png')}}" class="img-circle" alt="User Image">
+                                                </div>
+                                                <h4>
+                                                  {{$msg->name}}
+                                                    <small><i class="fa fa-clock-o"></i> {{date('M d, Y', strtotime($msg->created_at))}}</small>
+                                                </h4>
+                                                <p>{{strShorten($msg->message, 40)}}</p>
+                                            </a>
+                                        </li><!-- end message -->
+                                        @endforeach
+
+                                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-warning"></i>
+                                @if(count($headerData['notifications'])>0)
                                 <span class="label label-warning">{{count($headerData['notifications'])}}</span>
+                                @endif
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="header">You have {{count($headerData['notifications'])}} notifications</li>

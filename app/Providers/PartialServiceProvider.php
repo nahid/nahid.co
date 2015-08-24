@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\Diary;
+use App\Models\Messages;
 use App\Models\Notifications;
 use Illuminate\Support\ServiceProvider;
 
@@ -41,7 +42,7 @@ class PartialServiceProvider extends ServiceProvider
 
     protected function adminHeader(){
         view()->composer('admin.partials.header', function($view){
-            $view->with('headerData', ['notifications'=>Notifications::where('user_id', Auth::user()->id)->get()]);
+            $view->with('headerData', ['notifications'=>Notifications::where('user_id', Auth::user()->id)->get(), 'messages'=>Messages::where('status', 0)->get()]);
         });
     }
 
