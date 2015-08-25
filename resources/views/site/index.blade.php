@@ -3,14 +3,14 @@
 @section('contents')
 <!-- start row -->
 <div class="row">
-    <div class="col-xs-7 col-sm-3 col-lg-3 text-right">
+    <div class="col-xs-12 col-sm-3 col-lg-3 text-right">
         <!-- Your foto -->
         <div class="foto">
             <img src="assets/img/nahid_avatar.jpg" alt="Ukieweb">
         </div>
         <!-- end your foto -->
     </div>
-    <div class="col-xs-12 col-sm-7 col-lg-7">
+    <div class="col-xs-12 col-sm-9 col-lg-9">
         <!-- Your Name -->
         <h1 class="title">Nahid Bin Azhar</h1>
         <!-- Your Profession -->
