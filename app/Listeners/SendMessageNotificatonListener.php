@@ -32,7 +32,7 @@ class SendMessageNotificatonListener
     public function handle(MessageSentEvent $event)
     {
         $notify=new Notify;
-
+        
         $this->message=$event->message;
         $msg=$this->message->name.' send you a message';
         $link=url('admin/message/read/'.$this->message->id);

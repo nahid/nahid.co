@@ -25,7 +25,7 @@
                       @endif
                       @if(session('msg')=='ok')
                       <div class="alert alert-success">
-                        Successfully Saved Diary
+                        Thank you, I'll contact you as soon as possible
                       </div>
                       @endif
                       <form action="{{url('/message')}}" id="contact-form" method="post">
