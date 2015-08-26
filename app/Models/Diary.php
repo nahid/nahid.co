@@ -21,5 +21,9 @@ class Diary extends Model
       return $this->belongsTo('App\Models\User');
     }
 
+    public function tagged(){
+        return $this->belongsTo('App\Models\Tagged', 'diary_id');
+    }
+
 
 }

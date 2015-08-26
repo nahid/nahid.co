@@ -1,0 +1,12 @@
+{
+    "name": "nahidz/tagx",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nahid Bin Azhar",
+            "email": "nahid.dns@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

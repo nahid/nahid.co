@@ -34,6 +34,7 @@
     <link type="text/css" media="all" href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" />
     <!-- Libs CSS -->
     <link type="text/css" media="all" href="{{asset('assets/boostrap-files/css/bootstrap.min.css')}}" rel="stylesheet" />
+
     <link href="{{asset('assets/css/owl.carousel.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/owl.theme.css')}}" rel="stylesheet" type="text/css" />
     <!-- Animate CSS -->
@@ -48,6 +49,7 @@
     <link type="text/css" media="all" href="{{asset('assets/css/bootstrap-markdown.min.css')}}" rel="stylesheet" />
     <link type="text/css" media="all" href="{{asset('assets/css/social-sharing-buttons.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/github.min.css">
+
 
 
     <!-- Style Switcher -->

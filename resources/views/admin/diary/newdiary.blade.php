@@ -25,6 +25,13 @@
 		<br/>
 		<label for="">Add Featured Photo</label>
 		<input type="file" name="featured_image" class="form-control" value="" style="border:none; box-shadow:none; height:100%;">
+        <input type="text" name="tags" class="tags" value="" />
+        <div class="accordion ">
+           <div class="accordion-group">
+            
+
+           </div>
+         </div>
     <label class="checkbox">
       <input name="publish" value="1" type="checkbox"> Publish
     </label>

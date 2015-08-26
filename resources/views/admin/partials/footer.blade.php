@@ -5,6 +5,8 @@
         <script src="{{asset('assets/js/jquery-ui-1.10.3.min.js')}}" type="text/javascript"></script>
         <!-- Bootstrap -->
         <script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
         <!-- Morris.js charts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <script src="{{asset('assets/js/plugins/morris/morris.min.js')}}" type="text/javascript"></script>
@@ -31,6 +33,10 @@
         <script src="{{asset('assets/js/markdown.js')}}" type="text/javascript"></script>
 
         <script src="{{asset('assets/js/bootstrap-markdown.js')}}" type="text/javascript"></script>
+
+        <script src="{{asset('assets/js/bootstrap-tagsinput.min.js')}}"></script>
+        <script src="{{asset('assets/js/app_bs3.js')}}"></script>
+        
         <script type="text/javascript">
           $("#textarea").markdown({autofocus:false})
         </script>

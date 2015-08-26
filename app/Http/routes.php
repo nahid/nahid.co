@@ -12,6 +12,10 @@
 */
 
 use App\Models\User;
+use App\Models\Tags;
+use App\Models\Tagged;
+use App\Models\Diary;
+use Nahidz\Tagx\Tagx;
 
 Route::get('/', 'PublicContoller@index');
 Route::get('/resume', 'PublicContoller@resumePage');
@@ -59,3 +63,16 @@ Route::get('callback/facebook', 'LoginController@callbackFacebook');
 Route::get('callback/github', 'LoginController@callbackGithub');
 Route::get('callback/google', 'LoginController@callbackGoogle');
 Route::get('callback/twitter', 'LoginController@callbackTwitter');
+
+
+get('/tags', function(Tagx $tag){
+    // if($tag->saveTagged('2, 3, 1', 1)){
+    //     echo 'Success';
+    // }else{
+    //     echo 'failure';
+    // }
+
+    $diary=Tags::where('id', 1)->get();
+    dd($diary->diary);
+
+});

@@ -6,6 +6,7 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link type="text/css" media="all" href="{{asset('assets/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />
 
         <!-- font Awesome -->
         <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
@@ -21,7 +22,9 @@
         <link href="{{asset('assets/css/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="{{asset('assets/css/AdminLTE.css')}}" rel="stylesheet" type="text/css" />
-            <link type="text/css" media="all" href="{{asset('assets/css/bootstrap-markdown.min.css')}}" rel="stylesheet" />
+        <link type="text/css" media="all" href="{{asset('assets/css/bootstrap-markdown.min.css')}}" rel="stylesheet" />
+
+            <link type="text/css" media="all" href="{{asset('assets/css/app.css')}}" rel="stylesheet" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

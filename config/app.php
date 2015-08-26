@@ -149,6 +149,7 @@ return [
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Nahidz\Notify\NotifiyServiceProvider::class,
+        Nahidz\Tagx\TagxServiceProvider::class,
 
     ],
 

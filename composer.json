@@ -24,7 +24,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Nahidz\\Notify\\":"app/Packages/nahidz/notify/src"
+            "Nahidz\\Notify\\":"app/Packages/nahidz/notify/src",
+            "Nahidz\\Tagx\\":"app/Packages/nahidz/tagx/src"
         },
       "files": [
           "app/Http/Helpers/helpers.php"

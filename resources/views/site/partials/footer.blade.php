@@ -49,6 +49,8 @@
 
     <script src="{{asset('assets/js/jquery-1.11.2.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/boostrap-files/js/bootstrap.min.js')}}" type="text/javascript"></script>
+
+
     <script src="{{asset('assets/js/jquery.countTo.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/jquery.appear.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/jquery.nicescroll.min.js')}}" type="text/javascript"></script>
@@ -62,6 +64,7 @@
     <script src="{{asset('assets/js/markdown.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/bootstrap-markdown.js')}}" type="text/javascript"></script>
     <script src="{{asset('assets/js/to-bootstrap.js')}}" type="text/javascript"></script>
+    
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
  <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
