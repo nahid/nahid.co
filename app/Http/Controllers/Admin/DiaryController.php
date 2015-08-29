@@ -18,6 +18,7 @@ use App\Http\Requests\CommentsCreateRequest;
 use App\Models\Diary;
 use App\Models\Category;
 use App\Models\Comments;
+use App\Models\Tags;
 
 
 class DiaryController extends Controller
@@ -64,7 +65,10 @@ class DiaryController extends Controller
                $diary->user_id=Auth::user()->id;
 
                if($diary->save()){
-                 return redirect()->back()->with('msg', 'ok');
+                   $tags=explode(',', $req->input('tags'));
+                   $diary->tags()->sync($tags);
+
+                   return redirect()->back()->with('msg', 'ok');
                }
            }
 
@@ -103,6 +107,45 @@ class DiaryController extends Controller
           }else{
             return redirect()->back()->withErrors($valid->errors());
           }
+     }
+
+     public function getTags()
+     {
+
+         $tags=Tags::all();
+
+         return view('admin.diary.tags', [
+           'pageInfo'=>[
+             'siteTitle'=>'Tags Manager',
+             'pageHeading'=>'Tags Manager',
+             'pageHeadingSlogan'=>'I write here what I learn']
+             ,
+             'data'=>[
+                'tags'=>$tags
+               ]
+           ]);
+     }
+
+     public function postTags(Request $req)
+     {
+
+         $rules=[
+                'tag_name'=>['required', 'min:2']
+            ];
+
+        $valid=Validator::make($req->input(), $rules);
+
+        if(!$valid->fails()){
+            $tag=new Tags;
+            $tag->tag_name=strtolower(str_slug($req->input('tag_name')));
+            if($tag->save()){
+                return redirect()->back()->with('msg', 'Successfully Saved Tag');
+            }
+        }else{
+            return redirect()->back()->withErrors($valid->errors());
+        }
+
+
      }
 
 }

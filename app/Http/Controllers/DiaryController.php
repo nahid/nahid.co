@@ -11,6 +11,7 @@ use Auth;
 use Validator;
 use Image;
 use Markdown;
+use DB;
 
 use App\Http\Requests\DiaryCreateRequest;
 use App\Http\Requests\CommentsCreateRequest;
@@ -18,6 +19,7 @@ use App\Http\Requests\CommentsCreateRequest;
 use App\Models\Diary;
 use App\Models\Category;
 use App\Models\Comments;
+use App\Models\Tags;
 
 
 
@@ -83,5 +85,10 @@ class DiaryController extends Controller
            'pageHeadingSlogan'=>'I write here what I learn'],
            'data'=>$diary
          ]);
+   }
+
+   public function getTags(){
+       $tags = Tags::select(DB::raw('id as value, tag_name as text'))->get();
+       return response()->json($tags);
    }
 }

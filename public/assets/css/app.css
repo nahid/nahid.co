@@ -10,7 +10,7 @@
 	margin-bottom:-3px;
 }
 
-.accordion-group { 
+.accordion-group {
 	border: none;
 }
 
@@ -60,4 +60,13 @@
   text-decoration: none;
   outline: 0;
   background-color: #428bca;
+}
+
+.tagcloud a{
+    display: inline-block;
+    background-color:#999999;
+    padding:5px 10px;
+    color:white;
+    margin:5px;
+
 }

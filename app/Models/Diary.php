@@ -21,8 +21,8 @@ class Diary extends Model
       return $this->belongsTo('App\Models\User');
     }
 
-    public function tagged(){
-        return $this->belongsTo('App\Models\Tagged', 'diary_id');
+    public function tags(){
+        return $this->belongsToMany('App\Models\Tags', 'tagged', 'diary_id', 'tag_id');
     }
 
 

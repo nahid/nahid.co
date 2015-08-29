@@ -1,5 +1,8 @@
 
         <!-- jQuery 2.0.2 -->
+        <script>
+            var baseUrl="{{url()}}";
+        </script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
         <script src="{{asset('assets/js/jquery-ui-1.10.3.min.js')}}" type="text/javascript"></script>
@@ -36,7 +39,7 @@
 
         <script src="{{asset('assets/js/bootstrap-tagsinput.min.js')}}"></script>
         <script src="{{asset('assets/js/app_bs3.js')}}"></script>
-        
+
         <script type="text/javascript">
           $("#textarea").markdown({autofocus:false})
         </script>

@@ -9,11 +9,9 @@ class Tags extends Model
     protected $table = 'tags';
     public $timestamps=false;
 
-    protected $primaryKey = null;
 
-    public $incrementing = false;
-
-    public function diary(){
-        return $this->belongsTo('App\Models\Tagged', 'tag_id')->join('diary', 'tagged.diary_id', '=', 'diary.id');
-    }
+    public function diary()
+       {
+           return $this->belongsToMany('App\Models\Diary', 'tagged', 'tag_id', 'diary_id');
+       }
 }

@@ -1,11 +1,13 @@
 
 
-var cities = new Bloodhound({
+var tags = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: '../../assets/cities.json'
+  remote:{
+      url:'http://localhost:8000/diary/tags'
+  }
 });
-cities.initialize();
+tags.initialize();
 
 /**
  * Typeahead
@@ -19,8 +21,8 @@ elt.tagsinput({
   itemValue: 'value',
   itemText: 'text',
   typeaheadjs: {
-    name: 'cities',
+    name: 'tags',
     displayKey: 'text',
-    source: cities.ttAdapter()
+    source: tags.ttAdapter()
   }
 });

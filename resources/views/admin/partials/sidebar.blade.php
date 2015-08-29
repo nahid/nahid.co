@@ -36,7 +36,8 @@
             <ul class="treeview-menu">
                 <li><a href={{url('admin/diary/new')}}><i class="fa fa-angle-double-right"></i>New Diary</a></li>
                 <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i>All Diary</a></li>
-                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Category</a></li>
+                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i>Category</a></li>
+                <li><a href="{{url('admin/diary/tags')}}"><i class="fa fa-angle-double-right"></i>Manage Tags</a></li>
             </ul>
         </li>
         <li class="treeview">

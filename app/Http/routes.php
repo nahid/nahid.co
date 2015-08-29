@@ -72,7 +72,10 @@ get('/tags', function(Tagx $tag){
     //     echo 'failure';
     // }
 
-    $diary=Tags::where('id', 1)->get();
-    dd($diary->diary);
+    $diary=Diary::tags()->where('tags.id')->get();
+
+    dd($diary);
+
+
 
 });
