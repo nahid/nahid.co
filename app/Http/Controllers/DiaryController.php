@@ -26,7 +26,7 @@ use App\Models\Tags;
 class DiaryController extends Controller
 {
    public function getIndex(){
-     $diary=Diary::with(['tags'])->paginate(10);
+     $diary=Diary::with(['tags'])->orderBy('created_at', 'desc')->paginate(10);
 
      return view('site.diary.diary', [
        'pageInfo'=>[
@@ -76,7 +76,7 @@ class DiaryController extends Controller
 
    public function getCategory($aliasOrId){
        $category=Category::where('id', $aliasOrId)->orWhere('category_alias', $aliasOrId)->firstOrFail();
-       $diary=Category::find($category->id)->diary()->paginate(10);
+       $diary=Category::find($category->id)->diary()->orderBy('created_at', 'desc')->paginate(10);
 
        return view('site.diary.diary', [
          'pageInfo'=>[
@@ -90,7 +90,7 @@ class DiaryController extends Controller
 
    public function getTag($aliasOrId){
        $tag=Tags::where('id', $aliasOrId)->orWhere('tag_name', $aliasOrId)->firstOrFail();
-       $diary=Tags::find($tag->id)->diary()->paginate(10);
+       $diary=Tags::find($tag->id)->diary()->orderBy('created_at', 'desc')->paginate(10);
 
        return view('site.diary.diary', [
          'pageInfo'=>[

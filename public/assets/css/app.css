@@ -70,3 +70,8 @@
     margin:5px;
 
 }
+
+.photo a{
+    border:none;
+    cursor:pointer;
+}

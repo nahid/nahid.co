@@ -5,7 +5,7 @@
 <div class="post one-post">
                     <!-- start photo -->
                     <div class="photo">
-                        <img src="{{asset('media/diary/'.$diary->featured_image)}}" alt="UkieWeb">
+                        <img src="{{asset('media/diary/'.$diary->featured_image)}}" alt="{{$diary->title}}">
                     </div>
                     <!-- end photo -->
                     <!-- start title post -->
@@ -14,7 +14,7 @@
                     <div class="entry-byline">
                         <i class="fa fa-globe"></i>
                         <span class="entry-author right-border">
-                            <a href="#" title="Posts by Theme Admin" rel="author">
+                            <a href="{{url('diary/category/'.$diary->category->category_alias)}}" title="Posts by Theme Admin" rel="author">
                                 <span>{{$diary->category->category_name}}</span>
                             </a>
                         </span>
