@@ -988,6 +988,23 @@ a:hover, a:visited, a:focus, a:active{
 }
 
 
+
+.diary-tags .tagcloud a{
+    display: inline-block;
+    color:#666666;
+    margin: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 25px;
+    padding: 0 10px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #F0F0F0;
+    border-color: #E0E0E0;
+
+}
+
+
 /* ------------------
     Pagination
 --------------------*/
@@ -1001,7 +1018,9 @@ a:hover, a:visited, a:focus, a:active{
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+
 }
+
 .pagination .dots {
     border: 0;
     margin: 0;

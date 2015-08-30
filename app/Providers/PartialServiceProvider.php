@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\Diary;
 use App\Models\Messages;
+use App\Models\Tags;
 use App\Models\Notifications;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,7 +37,7 @@ class PartialServiceProvider extends ServiceProvider
 
     protected function sidebarCategory(){
         view()->composer('site.partials.sidebar', function($view){
-            $view->with('navData', ['category'=>Category::get(), 'recents'=>Diary::take(5)->get(['title', 'id'])]);
+            $view->with('navData', ['category'=>Category::get(), 'recents'=>Diary::take(5)->get(['title', 'id']), 'tags'=>Tags::all()]);
         });
     }
 

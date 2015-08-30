@@ -26,7 +26,7 @@ use App\Models\Tags;
 class DiaryController extends Controller
 {
    public function getIndex(){
-     $diary=Diary::paginate(10);
+     $diary=Diary::with(['tags'])->paginate(10);
 
      return view('site.diary.diary', [
        'pageInfo'=>[
@@ -43,9 +43,10 @@ class DiaryController extends Controller
 
 
    public function getRead($id){
-       $diary=Diary::with('comments')->find($id);
+       $diary=Diary::with(['comments', 'tags'])->find($id);
        //$comments=Comments::where('diary_id', $id)->get();
-
+       $diary->visits+=1;
+       $diary->save();
        return view('site.diary.read', [
          'pageInfo'=>[
            'pageLogo'=>'diary',
@@ -82,6 +83,20 @@ class DiaryController extends Controller
            'pageLogo'=>'diary',
            'siteTitle'=>'Diary | '.$category->category_name,
            'pageHeading'=>'Diary | '.$category->category_name,
+           'pageHeadingSlogan'=>'I write here what I learn'],
+           'data'=>$diary
+         ]);
+   }
+
+   public function getTag($aliasOrId){
+       $tag=Tags::where('id', $aliasOrId)->orWhere('tag_name', $aliasOrId)->firstOrFail();
+       $diary=Tags::find($tag->id)->diary()->paginate(10);
+
+       return view('site.diary.diary', [
+         'pageInfo'=>[
+           'pageLogo'=>'diary',
+           'siteTitle'=>'Diary by Tag | '.$tag->tag_name,
+           'pageHeading'=>'Diary | '.$tag->tag_name,
            'pageHeadingSlogan'=>'I write here what I learn'],
            'data'=>$diary
          ]);

@@ -3,7 +3,7 @@
 var tags = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  remote:{
+  prefetch:{
       url:'http://localhost:8000/diary/tags'
   }
 });
@@ -21,6 +21,7 @@ elt.tagsinput({
   itemValue: 'value',
   itemText: 'text',
   typeaheadjs: {
+      hint:true,
     name: 'tags',
     displayKey: 'text',
     source: tags.ttAdapter()

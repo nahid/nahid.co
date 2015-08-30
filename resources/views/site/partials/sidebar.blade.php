@@ -33,12 +33,9 @@
     <aside class="widget widget_tag_cloud">
         <h3 class="widget-title">Tags</h3>
         <div class="tagcloud">
-            <a href="#" class="hover-animate">Web</a>
-            <a href="#" class="hover-animate">Illustrations</a>
-            <a href="#" class="hover-animate">Graphic design</a>
-            <a href="#" class="hover-animate">Applications</a>
-            <a href="#" class="hover-animate">Photo</a>
-            <a href="#" class="hover-animate">UkieWeb</a>
+            @foreach($navData['tags'] as $tag)
+            <a href="{{url('diary/tag/'.$tag->tag_name)}}" class="hover-animate">{{$tag->tag_name}}</a>
+            @endforeach
         </div>
     </aside>
 

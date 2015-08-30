@@ -65,8 +65,10 @@ class DiaryController extends Controller
                $diary->user_id=Auth::user()->id;
 
                if($diary->save()){
-                   $tags=explode(',', $req->input('tags'));
-                   $diary->tags()->sync($tags);
+                   if($req->input('tags')!=''){
+                       $tags=explode(',', $req->input('tags'));
+                       $diary->tags()->sync($tags);
+                   }
 
                    return redirect()->back()->with('msg', 'ok');
                }

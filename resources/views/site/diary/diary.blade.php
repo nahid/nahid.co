@@ -23,12 +23,21 @@
         <i class="fa fa-clock-o"></i>
         <time class="entry-published right-border">{{date('d/m/Y', strtotime($diary->created_at))}}</time>
         <i class="fa fa-comment"></i>
-        <span class="comments-link">{{count($diary->comments)}} Comments</span>
+        <span class="comments-link right-border">{{count($diary->comments)}} Comments</span>
+        <i class="fa fa-eye"></i>
+        <span class="entry-author">{{$diary->visits}} Visits</span>
     </div>
     <!-- start desc post -->
-    <p>{!!strShorten(Markdown::convertToHtml($diary->note), 200)!!}</p>
+    <p>{!!strShorten(Markdown::convertToHtml($diary->note), 500)!!}</p>
     <!-- end desc post -->
-    <a href="{{url('diary/read/'.$diary->id)}}" class="btn hover-animate btn-color-hover">Read More</a>
+    <aside class="diary-tags">
+    <div class="tagcloud">
+        @foreach($diary->tags as $tag)
+        <a href="{{url('diary/tag/'.$tag->tag_name)}}" class="hover-animate">{{$tag->tag_name}}</a>
+        @endforeach
+    </div>
+    </aside>
+    <a href="{{url('diary/read/'.$diary->id)}}" class="btn btn-info hover-animate btn-color-hover">Read More</a>
 </div>
 <!-- end post -->
 @endforeach
