@@ -764,7 +764,7 @@ a:hover, a:visited, a:focus, a:active{
     border-style: solid;
     overflow: hidden;
 }
-.blog .post .photo img{
+.blog .post .photo img, .blog .post.one-post img{
     width: 100%;
     position: relative;
     webkit-transition: all 0.5s ease-out;
