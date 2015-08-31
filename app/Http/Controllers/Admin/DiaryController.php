@@ -13,6 +13,7 @@ use Image;
 use Markdown;
 
 use App\Http\Requests\DiaryCreateRequest;
+use App\Http\Requests\DiaryEditRequest;
 use App\Http\Requests\CommentsCreateRequest;
 
 use App\Models\Diary;
@@ -23,6 +24,25 @@ use App\Models\Tags;
 
 class DiaryController extends Controller
 {
+
+    public function getAll()
+    {
+        $diary=Diary::with(['category', 'tags'])->paginate(40);
+
+        return view('admin.diary.alldiary', [
+          'pageInfo'=>
+           [
+            'siteTitle'        =>'All Diary',
+            'pageHeading'      =>'All Diary',
+            'pageHeadingSlogan'=>'I write here what I learn'
+            ]
+            ,
+            'data'=>
+            [
+               'diary'      =>  $diary
+              ]
+          ]);
+    }
 
        public function getNew()
        {
@@ -149,5 +169,66 @@ class DiaryController extends Controller
 
 
      }
+
+     public function getEdit($id)
+     {
+         $cat=Category::get();
+         $diary=Diary::find($id);
+
+         return view('admin.diary.editdiary', [
+           'pageInfo'=>
+            [
+             'siteTitle'        =>'Edit Diary',
+             'pageHeading'      =>'Edit Diary',
+             'pageHeadingSlogan'=>'I write here what I learn'
+             ]
+             ,
+             'data'=>
+             [
+                'category'      =>  $cat,
+                'diary'         =>  $diary
+               ]
+           ]);
+     }
+
+
+     public function postEdit(DiaryEditRequest $req, $id)
+     {
+         $diary = Diary::find($id);
+
+         $fileName = $diary->featured_image;
+
+         if($req->hasFile('featured_image')){
+
+          $img=Image::make($req->file('featured_image'));
+          $ext=$req->file('featured_image')->getClientOriginalExtension();
+          $fileName=str_slug($req->input('title')).uniqid().'.'.$ext;
+
+          $img->resize(760, null, function ($constraint) {
+                  $constraint->aspectRatio();
+                $constraint->upsize();
+              });
+
+          $img->save(public_path().'/media/diary/'.$fileName);
+        }
+
+              $diary->title=$req->input('title');
+              $diary->note=$req->input('content');
+              $diary->category_id=$req->input('category');
+              $diary->featured_image=$fileName;
+              $diary->status=$req->input('publish')?$req->input('publish'):0;
+
+              if($diary->save()){
+                //   if($req->input('tags')!=''){
+                //       $tags=explode(',', $req->input('tags'));
+                //       $diary->tags()->sync($tags);
+                //   }
+
+                  return redirect()->back()->with('msg', 'ok');
+              }
+
+
+     }
+
 
 }
