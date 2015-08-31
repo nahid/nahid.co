@@ -39,6 +39,7 @@
 
         <script src="{{asset('assets/js/bootstrap-tagsinput.min.js')}}"></script>
         <script src="{{asset('assets/js/app_bs3.js')}}"></script>
+        <script src="{{asset('assets/js/commons.js')}}"></script>
 
         <script type="text/javascript">
           $("#textarea").markdown({autofocus:false})
