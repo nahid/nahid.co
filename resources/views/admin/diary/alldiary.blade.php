@@ -39,7 +39,7 @@
                       <td>
                           <a href="{{url('admin/diary/edit/'.$diary->id)}}" class="btn btn-info btn-xs">Edit</a>
                           <a href="{{url('admin/diary/delete/'.$diary->id)}}" class="btn btn-danger btn-xs del">Delete</a>
-                          <button type="button" name="button" class="del">del</button>
+                          
                       </td>
                     </tr>
                       @endforeach

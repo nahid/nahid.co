@@ -65,7 +65,7 @@
                             <div class="post-comment">
                                 <div class="col-md-2 col-xs-2 post-user-info text-center">
                                     <div class="user-img">
-                                        <img src="{{$comment->user->image}}" alt="UkieWeb">
+                                        <img src="{{$comment->user->image}}" alt="{{$comment->user->name}}" class="img">
                                     </div>
                                     <div class="user-name">{{$comment->user->name}}</div>
                                 </div>

@@ -26,7 +26,7 @@ use App\Models\Tags;
 class DiaryController extends Controller
 {
    public function getIndex(){
-     $diary=Diary::with(['tags'])->orderBy('created_at', 'desc')->paginate(10);
+     $diary=Diary::where('status', 1)->where('category_id', '!=', 7)->with(['tags'])->orderBy('created_at', 'desc')->paginate(10);
 
      return view('site.diary.diary', [
        'pageInfo'=>[
@@ -44,6 +44,14 @@ class DiaryController extends Controller
 
    public function getRead($id){
        $diary=Diary::with(['comments', 'tags'])->find($id);
+
+       if($diary->status==0){
+           if(!Auth::check()){
+               return redirect('diary');
+           }elseif(Auth::user()->id!=$diary->user_id){
+                return redirect('diary');
+           }
+       }
        //$comments=Comments::where('diary_id', $id)->get();
        $diary->visits+=1;
        $diary->save();
@@ -76,7 +84,7 @@ class DiaryController extends Controller
 
    public function getCategory($aliasOrId){
        $category=Category::where('id', $aliasOrId)->orWhere('category_alias', $aliasOrId)->firstOrFail();
-       $diary=Category::find($category->id)->diary()->orderBy('created_at', 'desc')->paginate(10);
+       $diary=Category::find($category->id)->diary()->where('diary.status', 1)->orderBy('created_at', 'desc')->paginate(10);
 
        return view('site.diary.diary', [
          'pageInfo'=>[
@@ -90,7 +98,7 @@ class DiaryController extends Controller
 
    public function getTag($aliasOrId){
        $tag=Tags::where('id', $aliasOrId)->orWhere('tag_name', $aliasOrId)->firstOrFail();
-       $diary=Tags::find($tag->id)->diary()->orderBy('created_at', 'desc')->paginate(10);
+       $diary=Tags::find($tag->id)->diary()->where('diary.status', 1)->orderBy('created_at', 'desc')->paginate(10);
 
        return view('site.diary.diary', [
          'pageInfo'=>[

@@ -21,14 +21,14 @@
 				<option value="{{$cat->id}}">{{$cat->category_name}}</option>
 			@endforeach
 		</select><br/>
-    <textarea id="textarea" name="content" data-height="600" rows="10" data-iconlibrary="fa"></textarea>
+    <textarea id="textarea" name="content" data-height="500" rows="10" data-iconlibrary="fa"></textarea>
 		<br/>
 		<label for="">Add Featured Photo</label>
 		<input type="file" name="featured_image" class="form-control" value="" style="border:none; box-shadow:none; height:100%;">
         <input type="text" name="tags" class="tags" value="" />
         <div class="accordion ">
            <div class="accordion-group">
-            
+
 
            </div>
          </div>

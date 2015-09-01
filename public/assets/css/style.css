@@ -765,7 +765,7 @@ a:hover, a:visited, a:focus, a:active{
     overflow: hidden;
 }
 .blog .post .photo img, .blog .post.one-post img{
-    width: 100%;
+    width:100%;
     position: relative;
     webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
@@ -1171,8 +1171,8 @@ a:hover, a:visited, a:focus, a:active{
     visibility: visible;
 }
 
-.user-img img{
-    width:50px;
-    height:50px;
+.user-img .img{
+    width:50px !important;
+    height:50px !important;
     border-radius: 50%;
 }
