@@ -36,7 +36,7 @@ $ php artisan serve
 
 Now your project run under `8000` port [http://localhost:8000](http://localhost:8000).
 
-> Remember this: every time you have to run this serve at `8000` port. Because our social login activate under this project 
+> Remember this: every time you have to run this server at `8000` port. Because our social login activate under this port 
 
 Okay, now open this project in your browser and I think it will working fine. To login this project click login and now click 'facebook' icon and then it will automatically login. In this open source version I was integrate only facebook login.
 
