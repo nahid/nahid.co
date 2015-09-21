@@ -24,10 +24,11 @@
 
                       <th style="width: 100px">Action</th>
                     </tr>
+                    <?php $id=1; ?>
                     @foreach($data['diary'] as $diary)
                     <tr>
-                      <td>{{$diary->id}}</td>
-                      <td>{{$diary->title}}</td>
+                      <td>{{$id}}</td>
+                      <td><a href="{{url('diary/read/'.$diary->id)}}" target="_blank">{{$diary->title}}</a></td>
                       <td>{{$diary->category->category_name}}</td>
                       <td>
                           @foreach($diary->tags as $tag)
@@ -42,6 +43,7 @@
                           
                       </td>
                     </tr>
+                      <?php $id++; ?>
                       @endforeach
 
                   </tbody></table>

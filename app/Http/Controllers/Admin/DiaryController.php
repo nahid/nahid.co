@@ -27,7 +27,7 @@ class DiaryController extends Controller
 
     public function getAll()
     {
-        $diary=Diary::with(['category', 'tags'])->paginate(40);
+        $diary=Diary::with(['category', 'tags'])->orderBy('created_at', 'desc')->paginate(40);
 
         return view('admin.diary.alldiary', [
           'pageInfo'=>

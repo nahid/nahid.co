@@ -37,13 +37,13 @@ class PartialServiceProvider extends ServiceProvider
 
     protected function sidebarCategory(){
         view()->composer('site.partials.sidebar', function($view){
-            $view->with('navData', ['category'=>Category::get(), 'recents'=>Diary::take(5)->get(['title', 'id']), 'tags'=>Tags::all()]);
+            $view->with('navData', ['category'=>Category::get(), 'recents'=>Diary::take(5)->orderBy('created_at', 'desc')->get(['title', 'id']), 'tags'=>Tags::all()]);
         });
     }
 
     protected function adminHeader(){
         view()->composer('admin.partials.header', function($view){
-            $view->with('headerData', ['notifications'=>Notifications::where('user_id', Auth::user()->id)->get(), 'messages'=>Messages::where('status', 0)->get()]);
+            $view->with('headerData', ['notifications'=>Notifications::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get(), 'messages'=>Messages::where('status', 0)->orderBy('created_at', 'desc')->get()]);
         });
     }
 
