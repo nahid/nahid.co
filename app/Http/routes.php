@@ -28,15 +28,15 @@ Route::controllers([
       'diary'   =>    'DiaryController'
   ]);
 
+Route::get('profile/{id}', 'ProfileController@index');
 
 
 
-
-
-Route::group(['middleware'=>'admin', 'namespace'=>'Admin', 'prefix'=>'admin'], function(){
+Route::group(['middleware'=>'auth', 'namespace'=>'Admin', 'prefix'=>'admin'], function(){
     Route::controllers([
         'diary'     =>      'DiaryController',
-        'resume'    =>      'WorkEduController'
+        'resume'    =>      'WorkEduController',
+        'users'     =>      'UsersController'
     ]);
 
     get('/', function(){

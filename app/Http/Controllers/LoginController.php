@@ -17,7 +17,10 @@ use Hash;
 class LoginController extends Controller
 {
 
-    public function loginPage(){
+    public function loginPage(Request $req){
+        if($req->has('next')){
+            session(['_next'=>$req->input('next')]);
+        }
         return view('site.login', [
           'pageInfo'=>['pageLogo'=>'diary','siteTitle'=>'Login', 'pageHeading'=>'User Login', 'pageHeadingSlogan'=>'Here the place to authentication']
          ]);
@@ -27,6 +30,7 @@ class LoginController extends Controller
 
       if($user->exists()){
           $user=$user->first();
+          $updateUser=User::where('id', $user->id)->update(['image'=>$instance->getAvatar()]);
           if(Auth::loginUsingId($user->id)){
             return true;
           }
@@ -72,23 +76,38 @@ class LoginController extends Controller
 
 
 
-   public function callbackFacebook(){
+   public function callbackFacebook(Request $req){
      $user=Socialite::driver('facebook')->user();
      if($this->login($user)){
+         if(session('_next')){
+             $next=session('_next');
+             $req->session()->forget('_next');
+             return redirect()->away(rawurldecode($next));
+         }
        return redirect('/');
      }
    }
 
-   public function callbackGithub(){
+   public function callbackGithub(Request $req){
      $user=Socialite::driver('github')->user();
      if($this->login($user)){
+         if(session('_next')){
+             $next=session('_next');
+             $req->session()->forget('_next');
+             return redirect()->away(rawurldecode($next));
+         }
        return redirect('/');
      }
    }
 
-   public function callbackGoogle(){
+   public function callbackGoogle(Request $req){
      $user=Socialite::driver('google')->user();
      if($this->login($user)){
+         if(session('_next')){
+             $next=session('_next');
+             $req->session()->forget('_next');
+             return redirect()->away(rawurldecode($next));
+         }
        return redirect('/');
      }
    }

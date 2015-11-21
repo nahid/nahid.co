@@ -64,10 +64,12 @@
                             <!-- start post comment -->
                             <div class="post-comment">
                                 <div class="col-md-2 col-xs-2 post-user-info text-center">
-                                    <div class="user-img">
-                                        <img src="{{$comment->user->image}}" alt="{{$comment->user->name}}" class="img">
-                                    </div>
-                                    <div class="user-name">{{$comment->user->name}}</div>
+                                    <a href="{{url('profile/'.$comment->user->id)}}">
+                                        <div class="user-img">
+                                            <img src="{{$comment->user->image}}" alt="{{$comment->user->name}}" class="img">
+                                        </div>
+                                        <div class="user-name">{{$comment->user->name}}</div>
+                                    </a>
                                 </div>
                                 <div class="col-md-10 col-xs-10 post-comment-txt">
                                     <span class="comment-time">{{date('d/m/Y', strtotime($comment->created_at))}}</span>
@@ -122,7 +124,7 @@
                     <!-- end leave comment -->
 @else
 <p>
-    To make a comment you have to <a href="{{url('/login')}}">login</a>
+    To make a comment you have to <a href="{{url('/login?next='.rawurlencode($request->url()))}}">login</a>
 </p>
 @endif
                 </div>

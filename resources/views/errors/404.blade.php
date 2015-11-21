@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free funky 404 for Website Template | Home :: w3layouts</title>
+<title>404 | NAH!D</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href='http://fonts.googleapis.com/css?family=Capriola' rel='stylesheet' type='text/css'>
 <style type="text/css">
@@ -65,6 +65,7 @@ body{
 			<p> Sorry - The requested url was not found</p>
 			<div class="sub">
 			   <p><a href="{{url('/')}}"> Back to Home</a></p>
+			   <p><a href="{{url('/logout')}}"> Logout</a></p>
 			</div>
 		</div>
 	</div>

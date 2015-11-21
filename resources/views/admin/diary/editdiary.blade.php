@@ -25,13 +25,7 @@
 		<br/>
 		<label for="">Add Featured Photo</label>
 		<input type="file" name="featured_image" class="form-control" value="" style="border:none; box-shadow:none; height:100%;">
-        <label for="">Tags</label>
-        <div class="tagcloud">
-            @foreach($data['diary']->tags as $tag)
-            <a href="#" class="hover-animate">{{$tag->tag_name}}</a>
-            @endforeach
-
-        </div>
+        <input type="text" name="tags" class="tags" value="" />
         <!-- <input type="text" name="tags" class="tags" /> -->
         <div class="accordion ">
            <div class="accordion-group">
@@ -46,5 +40,7 @@
     <input type="hidden" name="_token" value="{{csrf_token()}}">
     <button type="submit" class="btn btn-success btn-lg">Save</button>
   </form>
-
+<script type="text/javascript">
+    var TagsData=<?php echo json_encode($data['diary']->tags); ?>;
+</script>
 @stop

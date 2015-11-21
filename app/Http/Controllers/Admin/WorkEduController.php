@@ -16,7 +16,16 @@ use App\Models\Skills;
 
 class WorkEduController extends Controller
 {
-    public function getEdu(){
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
+
+
+    public function getEdu()
+    {
+
         $edu=WorkEdu::where('type', 0)->get();
         return view('admin.workedu.edu', [
                 'pageInfo'=>
@@ -32,7 +41,9 @@ class WorkEduController extends Controller
     }
 
 
-    public function postEdu(WorkEduRequest $req){
+    public function postEdu(WorkEduRequest $req)
+    {
+
         $edu=new WorkEdu;
         $edu->institute=$req->input('institute');
         $edu->address=$req->input('address');
@@ -46,7 +57,9 @@ class WorkEduController extends Controller
     }
 
 
-    public function getWork(){
+    public function getWork()
+    {
+
         $work=WorkEdu::where('type', 1)->get();
         return view('admin.workedu.work', [
                 'pageInfo'=>
@@ -61,7 +74,9 @@ class WorkEduController extends Controller
             ]);
     }
 
-    public function postWork(WorkEduRequest $req){
+    public function postWork(WorkEduRequest $req)
+    {
+
         $edu=new WorkEdu;
         $edu->institute=$req->input('institute');
         $edu->address=$req->input('address');
@@ -74,7 +89,9 @@ class WorkEduController extends Controller
         }
     }
 
-    public function getSkills(){
+    public function getSkills()
+    {
+
       $skills=Skills::get();
       return view('admin.workedu.skills', [
               'pageInfo'=>
@@ -90,7 +107,9 @@ class WorkEduController extends Controller
     }
 
 
-    public function postSkills(Request $req){
+    public function postSkills(Request $req)
+    {
+
       $rules=[
           'skill'=>['required', 'min:2'],
           'skill_level'=>['required', 'integer'],

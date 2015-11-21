@@ -42,7 +42,7 @@ class DiaryController extends Controller
 
 
 
-   public function getRead($id){
+   public function getRead(Request $req, $id){
        $diary=Diary::with(['comments', 'tags'])->find($id);
 
        if($diary->status==0){
@@ -65,7 +65,8 @@ class DiaryController extends Controller
            'siteContents'=>strShorten($diary->note, 200)
            ],
            'diary'=>$diary,
-           'comments'=>$diary->comments
+           'comments'=>$diary->comments,
+           'request'=>$req
          ]);
 
    }

@@ -104,8 +104,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{Auth::user()->image}}" style="width:19px; height:19px; border-radius:50%" /> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{url('/admin')}}">Account</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="{{url('profile/'.auth()->user()->id)}}">Profile</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="{{url('logout')}}">Logout</a></li>
                 </ul>

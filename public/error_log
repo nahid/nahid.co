@@ -1,0 +1,17 @@
+[23-Aug-2015 11:28:30 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:30 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:33 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:33 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:36 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:36 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:40 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:28:40 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:29:00 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:29:00 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:29:25 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:29:25 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:29:28 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:29:28 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 25
+[23-Aug-2015 11:30:10 UTC] PHP Notice:  Undefined variable: app in /home/nahidco1/public_html/index.php on line 26
+[23-Aug-2015 11:30:10 UTC] PHP Fatal error:  Call to a member function bind() on null in /home/nahidco1/public_html/index.php on line 26
+[16-Nov-2015 19:59:16 UTC] PHP Fatal error:  Class 'App\Providers\PartialServiceProvider' not found in /home/nahidco1/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 146

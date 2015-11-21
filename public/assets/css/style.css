@@ -753,11 +753,17 @@ a:hover, a:visited, a:focus, a:active{
     border-bottom-style: solid;
     padding-bottom: 48px;
     margin-bottom: 48px;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.02em;
 }
 .blog .post.last, .blog .post.one-post{
     border: 0;
     padding-bottom: 0;
     margin-bottom: 48px;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.02em;
 }
 .blog .post .photo{
     border-width: 1px;
@@ -948,10 +954,11 @@ a:hover, a:visited, a:focus, a:active{
 
 .widget li{
     list-style: none;
-    font-size: 16px;
+    font-size: 14px;
     border-top-style: solid;
     border-top-width: 1px;
     padding: 10px 0;
+    letter-spacing: 0.06em;
 }
 .widget a:hover{
     -webkit-transition: all 0.5s ease-in-out;
@@ -979,9 +986,10 @@ a:hover, a:visited, a:focus, a:active{
 .widget_tag_cloud .tagcloud a{
     display: inline-block;
     margin: 5px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    line-height: 34px;
+    line-height: 2;
+    letter-spacing:0.06em;
     padding: 0 12px;
     border-width: 1px;
     border-style: solid;
@@ -993,9 +1001,10 @@ a:hover, a:visited, a:focus, a:active{
     display: inline-block;
     color:#666666;
     margin: 5px;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
-    line-height: 25px;
+    line-height: 2;
+    letter-spacing:0.06em;
     padding: 0 10px;
     border-width: 1px;
     border-style: solid;
@@ -1098,8 +1107,9 @@ a:hover, a:visited, a:focus, a:active{
 }
 
 .navbar-default {
-    background-color: rgba(248, 248, 248, 0.7) !important;
+    background-color: rgba(248, 248, 248, 0.95) !important;
     border-color: #E7E7E7;
+    box-shadow: 0px 2px 10px rgba(0,0, 0, 0.08);
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
@@ -1175,4 +1185,9 @@ a:hover, a:visited, a:focus, a:active{
     width:50px !important;
     height:50px !important;
     border-radius: 50%;
+}
+
+pre{
+   font-size: 14px !important;
+   letter-spacing: 0.06em;
 }

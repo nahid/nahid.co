@@ -12,23 +12,23 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Bordered Table</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tbody><tr>
                       <th style="width: 10px">#</th>
                       <th>Diary Title</th>
+                      <th>Author</th>
                       <th>Category</th>
                       <th>Tags</th>
 
                       <th style="width: 100px">Action</th>
                     </tr>
-                    <?php $id=1; ?>
                     @foreach($data['diary'] as $diary)
                     <tr>
-                      <td>{{$id}}</td>
-                      <td><a href="{{url('diary/read/'.$diary->id)}}" target="_blank">{{$diary->title}}</a></td>
+                      <td>{{$diary->id}}</td>
+                      <td>{{$diary->title}}</td>
+                      <td>{{$diary->user->name}}</td>
                       <td>{{$diary->category->category_name}}</td>
                       <td>
                           @foreach($diary->tags as $tag)
@@ -40,10 +40,9 @@
                       <td>
                           <a href="{{url('admin/diary/edit/'.$diary->id)}}" class="btn btn-info btn-xs">Edit</a>
                           <a href="{{url('admin/diary/delete/'.$diary->id)}}" class="btn btn-danger btn-xs del">Delete</a>
-                          
+
                       </td>
                     </tr>
-                      <?php $id++; ?>
                       @endforeach
 
                   </tbody></table>

@@ -18,7 +18,6 @@ class CreateDiaryTable extends Migration
             $tbl->text('note');
             $tbl->string('featured_image', 100)->nullable();
             $tbl->tinyInteger('status');
-            $tbl->integer('visits');
             $tbl->integer('category_id');
             $tbl->integer('user_id');
             $tbl->timestamps();

@@ -54,7 +54,7 @@
                         <!-- Messages: style can be found in dropdown.less-->
 
                         <!-- Notifications: style can be found in dropdown.less -->
-
+    @if(auth()->user()->role=='admin')
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope"></i>
@@ -190,6 +190,7 @@
                                 </li>
                             </ul>
                         </li>
+                    @endif
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -220,7 +221,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="{{url('profile/'.auth()->user()->id)}}" class="btn btn-default btn-flat" target="_blank">Profile</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="{{url('logout')}}" class="btn btn-default btn-flat">Sign out</a>

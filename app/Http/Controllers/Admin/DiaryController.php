@@ -24,12 +24,27 @@ use App\Models\Tags;
 
 class DiaryController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('adminauthor', ['only'=>['getAll', 'getNew', 'postNew', 'getEdit', 'postEdit']]);
+        $this->middleware('admin', ['except'=>['getAll', 'getNew', 'postNew', 'getEdit', 'postEdit']]);
+    }
 
     public function getAll()
     {
-        $diary=Diary::with(['category', 'tags'])->orderBy('created_at', 'desc')->paginate(40);
+        $diary='';
+        $view='';
+        if(Auth::user()->role=='admin'){
+            $diary=Diary::with(['category', 'tags'])->orderBy('created_at', 'desc')->paginate(40);
+            $view='admin.diary.alldiary';
+        }else{
+            $diary=Diary::with(['category', 'tags'])->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(40);
+            $view='admin.diary.usersalldiary';
+        }
 
-        return view('admin.diary.alldiary', [
+
+
+        return view($view, [
           'pageInfo'=>
            [
             'siteTitle'        =>'All Diary',
@@ -46,6 +61,7 @@ class DiaryController extends Controller
 
        public function getNew()
        {
+
          $cat=Category::get();
 
          return view('admin.diary.newdiary', [
@@ -98,6 +114,7 @@ class DiaryController extends Controller
 
      public function getCategory($id=null)
      {
+
        $cat=Category::get();
 
        return view('admin.diary.category', [
@@ -114,6 +131,7 @@ class DiaryController extends Controller
 
      public function postCategory(Request $req)
      {
+
         $rules=[
             'category_name'=>['required', 'min:2']
           ];
@@ -172,6 +190,7 @@ class DiaryController extends Controller
 
      public function getEdit($id)
      {
+
          $cat=Category::get();
          $diary=Diary::find($id);
 
@@ -194,6 +213,7 @@ class DiaryController extends Controller
 
      public function postEdit(DiaryEditRequest $req, $id)
      {
+
          $diary = Diary::find($id);
 
          $fileName = $diary->featured_image;
@@ -219,10 +239,10 @@ class DiaryController extends Controller
               $diary->status=$req->input('publish')?$req->input('publish'):0;
 
               if($diary->save()){
-                //   if($req->input('tags')!=''){
-                //       $tags=explode(',', $req->input('tags'));
-                //       $diary->tags()->sync($tags);
-                //   }
+                  if($req->input('tags')!=''){
+                      $tags=explode(',', $req->input('tags'));
+                      $diary->tags()->sync($tags);
+                  }
 
                   return redirect()->back()->with('msg', 'ok');
               }
