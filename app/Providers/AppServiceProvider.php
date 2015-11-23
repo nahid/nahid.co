@@ -12,6 +12,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Events\CommentSentEvent;
 use App\Events\MessageSentEvent;
 use App\Events\ChangeRoleEvent;
+use App\Events\NewUserEvent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
 
         User::updated(function($user){
             Event::fire(new ChangeRoleEvent($user));
+        });
+
+        User::created(function($user){
+            Event::fire(new NewUserEvent($user));
         });
     }
 
