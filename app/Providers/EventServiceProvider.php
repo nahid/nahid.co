@@ -23,6 +23,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\ChangeRoleEvent' => [
                 'App\Listeners\SendRoleChangeMailListener'
 
+        ],  
+        'App\Events\NewUserEvent' => [
+                'App\Listeners\SendNewUserMailListener'
+
         ]
     ];
 
