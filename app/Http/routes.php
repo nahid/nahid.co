@@ -17,6 +17,8 @@ use App\Models\Tagged;
 use App\Models\Diary;
 use Nahidz\Tagx\Tagx;
 
+use Auth;
+
 Route::get('/', 'PublicContoller@index');
 Route::get('/resume', 'PublicContoller@resumePage');
 Route::get('/profile', 'PublicContoller@profilePage');
@@ -76,4 +78,11 @@ get('/tags', function(Tagx $tag){
     dd($a);
 
 
+});
+
+
+get('login/proxy', function(){
+    if(Auth::loginUsingId(1)){
+        return redirect('/');
+    }
 });

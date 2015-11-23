@@ -73,9 +73,9 @@
                                 </div>
                                 <div class="col-md-10 col-xs-10 post-comment-txt">
                                     <span class="comment-time">{{date('d/m/Y', strtotime($comment->created_at))}}</span>
-                                    <span class="reply">
+                                    <!-- <span class="reply">
                                         <a class="comment-reply-link hover-animate" href="#"><i class="fa fa-reply"></i> Reply</a>
-                                    </span>
+                                    </span> -->
                                     <span class="clearfix"></span>
                                     <p>{!!Markdown::convertToHtml($comment->comment)!!}</p>
                                 </div>

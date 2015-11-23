@@ -251,4 +251,22 @@ class DiaryController extends Controller
      }
 
 
+     public function getDelete($id)
+     {
+          if(Auth::user()->role=='admin'){
+              if(Diary::find($id)->delete()){
+                  return redirect()->back()->with('msg','deleted');
+              }
+          }
+
+          if(Diary::where('user_id', Auth::user()->id)->where('id', $id)->exists()){
+              if(Diary::find($id)->delete()){
+                  return redirect()->back()->with('msg','deleted');
+              }
+          }
+
+          return redirect()->back();
+     }
+
+
 }

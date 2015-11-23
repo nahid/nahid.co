@@ -12,6 +12,9 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header with-border">
+                    @if(session('msg'))
+                      <div class="alert alert-success" style="margin-top:10px;">Diary Deleted Successfully</div>
+                    @endif
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">
@@ -26,7 +29,7 @@
                     @foreach($data['diary'] as $diary)
                     <tr>
                       <td>{{$diary->id}}</td>
-                      <td>{{$diary->title}}</td>
+                      <td><a href="{{url('diary/read/'.$diary->id)}}" target="_blank">{{$diary->title}}</a></td>
                       <td>{{$diary->category->category_name}}</td>
                       <td>
                           @foreach($diary->tags as $tag)
