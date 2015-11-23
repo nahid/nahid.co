@@ -39,12 +39,7 @@
 												<tr>
 													<td valign="top" height="37" style="height: 37px;">&nbsp;</td>
 												</tr>
-												<tr>
-													<td valign="top" colspan="2" style="text-align: left;">
-														<h1 style="margin: 0; padding: 0; font-size: 22px; color: #fd2323; font-weight: bold;">Thank you for contacting with me</h1>
-														<h2 class="date" style="margin: 0; padding: 0; font-size: 14px; font-weight: bold; color: #bababa;">{{date('M d, Y')}}</h2>
-													</td>
-												</tr>
+											
 												<tr>
 													<td valign="top" height="34" style="height: 34px; border-bottom-color: #d6d6d6; border-bottom-width: 1px; border-bottom-style: solid;">&nbsp;</td>
 												</tr>
@@ -61,7 +56,7 @@
 															</tr>
 															<tr>
 																<td valign="top">
-																	<p style="margin: 0; margin-top: 7px; margin-bottom: 20px; padding: 0; font-size: 13px; font-weight: normal; color: #535353; line-height: 22px; text-align: justify;">
+																	<p style="margin: 0; margin-top: 7px; margin-bottom: 20px; padding: 0; font-size: 13px; font-weight: normal; color: #FFAA00; line-height: 22px; text-align: justify;">
 																		Nahid Bin Azhar make you as an {{$user->role}} in <a href="http://nahid.co">nahid.co</a> site. <br/>
 																		Login <a href="http://nahid.co/login">here</a> to see what change.
                                                                         <br/><br/>
