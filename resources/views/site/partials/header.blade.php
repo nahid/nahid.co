@@ -94,11 +94,11 @@
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="{{url('profile')}}">Profile</a></li>
-              <li><a href="{{url('/resume')}}">Resume</a></li>
+              <li class="{{ Request::path() ==  'profile' ? 'active' : ''  }}"><a href="{{url('profile')}}">Profile</a></li>
+              <li class="{{ Request::path() ==  'resume' ? 'active' : ''  }}"><a href="{{url('/resume')}}">Resume</a></li>
               <li><a href="#contact">Workfolio</a></li>
-              <li><a href="{{url('/diary')}}">Diary</a></li>
-              <li><a href="{{url('/contact')}}">Contact</a></li>
+              <li class="{{ Request::path() ==  'diary' ? 'active' : ''  }}"><a href="{{url('/diary')}}">Diary</a></li>
+              <li class="{{ Request::path() ==  'contact' ? 'active' : ''  }}"><a href="{{url('/contact')}}">Contact</a></li>
               @if(Auth::check())
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{Auth::user()->image}}" style="width:19px; height:19px; border-radius:50%" /> <span class="caret"></span></a>
