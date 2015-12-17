@@ -10,7 +10,8 @@
         "guzzlehttp/guzzle": "~5.3|~6.0",
         "laravel/socialite": "~2.0",
         "graham-campbell/markdown": "~4.0",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "guzzle/guzzle": "^3.9"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

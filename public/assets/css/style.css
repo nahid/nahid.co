@@ -1191,3 +1191,9 @@ pre{
    font-size: 14px !important;
    letter-spacing: 0.06em;
 }
+
+
+.title-link, .title-link:hover{
+  text-decoration: none;
+  color:inherit;
+}

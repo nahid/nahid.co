@@ -13,12 +13,20 @@
     </div>
     <!-- end photo -->
     <!-- start title post -->
-    <h3 class="title title-blog">{{$diary->title}}</h3>
+    <a class="h3 title-link" href="{{url('diary/read/'.$diary->id)}}">
+        <h3 class="title title-blog">{{$diary->title}}</h3>
+    </a>
     <!-- end title post -->
     <div class="entry-byline">
+         <i class="fa fa-user"></i>
+        <span class="entry-author right-border">
+            <a href="{{url('profile/'.$diary->user->id)}}" title="Posts by {{$diary->user->name}}" rel="author" >
+                <span>{{$diary->user->name}}</span>
+            </a>
+        </span>
         <i class="fa fa-globe"></i>
         <span class="entry-author right-border">
-            <a href="{{url('diary/category/'.$diary->category->category_alias)}}" title="Posts by Theme Admin" rel="author" >
+            <a href="{{url('diary/category/'.$diary->category->category_alias)}}" title="Category of {{$diary->category->category_alias}}" rel="author">
                 <span>{{$diary->category->category_name}}</span>
             </a>
         </span>
