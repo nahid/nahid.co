@@ -35,7 +35,7 @@ class SendMailAllCommentersListener
 
         $comments=Comments::with('user')->where('diary_id', $comment->diary_id)->groupBy('user_id')->get();
 
-        Mail::queue('email.new_comment_for_poster', compact('comment', 'user'), function($m) use($user){
+        Mail::queue('email.new_comment_for_poster', ['comment'=>$comment->toArray(), 'user'=>$user], function($m) use($user){
             $m->to($user['email'], $user['name'])->subject("New Comment Was Posted On Your Post | nahid.co");
         });
 
