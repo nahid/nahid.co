@@ -12,9 +12,11 @@ use Validator;
 use Image;
 use Markdown;
 use DB;
+use Event;
 
 use App\Http\Requests\DiaryCreateRequest;
 use App\Http\Requests\CommentsCreateRequest;
+use App\Events\MakeCommentsEvent;
 
 use App\Models\Diary;
 use App\Models\Category;
@@ -78,6 +80,7 @@ class DiaryController extends Controller
        $comment->diary_id=$req->input('diary_id');
        $comment->user_id=Auth::user()->id;
        if($comment->save()){
+           Event::fire(new MakeCommentsEvent($comment));
            return redirect('diary/read/'. $req->input('diary_id').'#comment')->with('msg', 'Successfully comment posted');
        }
    }

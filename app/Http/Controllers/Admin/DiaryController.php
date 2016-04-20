@@ -11,10 +11,12 @@ use Auth;
 use Validator;
 use Image;
 use Markdown;
+use Event;
 
 use App\Http\Requests\DiaryCreateRequest;
 use App\Http\Requests\DiaryEditRequest;
 use App\Http\Requests\CommentsCreateRequest;
+use App\Events\NewDiaryEvent;
 
 use App\Models\Diary;
 use App\Models\Category;
@@ -101,6 +103,8 @@ class DiaryController extends Controller
                $diary->user_id=Auth::user()->id;
 
                if($diary->save()){
+                   Event::fire(new NewDiaryEvent($diary));
+
                    if($req->input('tags')!=''){
                        $tags=explode(',', $req->input('tags'));
                        $diary->tags()->sync($tags);

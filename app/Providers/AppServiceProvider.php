@@ -2,17 +2,20 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\ServiceProvider;
 use Event;
+
 use App\Models\Comments;
 use App\Models\Messages;
 use App\Models\User;
-
-use Illuminate\Support\ServiceProvider;
+use App\Models\Diary;
 
 use App\Events\CommentSentEvent;
 use App\Events\MessageSentEvent;
 use App\Events\ChangeRoleEvent;
 use App\Events\NewUserEvent;
+use App\Events\NewDiaryEvent;
+use App\Events\MakeCommentsEvent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,21 +26,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Comments::created(function($comment){
-            Event::fire(new CommentSentEvent($comment));
-        });
 
+      // this event fire when new message is created
         Messages::created(function($message){
             Event::fire(new MessageSentEvent($message));
         });
 
-        User::updated(function($user){
-            Event::fire(new ChangeRoleEvent($user));
-        });
 
-        User::created(function($user){
-            Event::fire(new NewUserEvent($user));
-        });
+
+
+
     }
 
     /**

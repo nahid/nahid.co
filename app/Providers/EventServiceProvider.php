@@ -19,13 +19,21 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\MessageSentEvent' => [
                 'App\Listeners\SendMessageMailListener'
 
-        ],  
+        ],
         'App\Events\ChangeRoleEvent' => [
                 'App\Listeners\SendRoleChangeMailListener'
 
-        ],  
+        ],
         'App\Events\NewUserEvent' => [
                 'App\Listeners\SendNewUserMailListener'
+
+        ],
+        'App\Events\NewDiaryEvent' => [
+                'App\Listeners\SendMailAllUsersListener'
+
+        ],
+        'App\Events\MakeCommentsEvent' => [
+                'App\Listeners\SendMailAllCommentersListener'
 
         ]
     ];

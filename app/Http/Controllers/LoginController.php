@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Listeners\SendNewUserMailListener;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
+use App\Events\NewUserEvent;
 
 use App\Models\User;
 
@@ -13,6 +16,7 @@ use Auth;
 use Response;
 use Socialite;
 use Hash;
+use Event;
 
 class LoginController extends Controller
 {
@@ -26,7 +30,12 @@ class LoginController extends Controller
          ]);
     }
    protected function login($instance){
-      $user=User::where('email', $instance->getEmail());
+       if($instance->getEmail()) {
+           $user=User::where('email', $instance->getEmail());
+       }else {
+           return view('site.login', ['msg'=>'The email address you used is not public. please try another login method']);
+       }
+
 
       if($user->exists()){
           $user=$user->first();
@@ -47,6 +56,7 @@ class LoginController extends Controller
         $newUser->role='user';
 
         if($newUser->save()){
+            Event::fire(new NewUserEvent($newUser));
           if(Auth::loginUsingId($newUser->id)){
             return true;
           }

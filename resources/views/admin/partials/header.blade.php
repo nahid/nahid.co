@@ -69,9 +69,9 @@
                                     <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
                                       @foreach($headerData['messages'] as $msg)
                                         <li><!-- start message -->
-                                            <a href="#">
+                                            <a href="{{url('admin/inbox/read/'.$msg->id)}}">
                                                 <div class="pull-left">
-                                                    <img src="{{asset('assets/img/avatar5.png')}}" class="img-circle" alt="User Image">
+                                                    <img src="{{$msg->image}}" class="img-circle" alt="User Image">
                                                 </div>
                                                 <h4>
                                                   {{$msg->name}}
@@ -84,7 +84,7 @@
 
                                     </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
                                 </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
+                                <li class="footer"><a href="{{url('/admin/inbox')}}">See All Messages</a></li>
                             </ul>
                         </li>
 

@@ -28,10 +28,10 @@ class SendNewUserMailListener
      */
     public function handle(NewUserEvent $event)
     {
-        $user=$event->$user;
+        $user=$event->user->toArray();
 
-        Mail::send('email.new_user', $user, function($m) use($user){
-            $m->to($user->email, $user->name)->subject("Congratulations! Welcome to nahid.co ");
+        Mail::queue('email.new_user', compact('user'), function($m) use($user){
+            $m->to($user['email'], $user['name'])->subject("Congratulations! Welcome to nahid.co ");
         });
     }
 }

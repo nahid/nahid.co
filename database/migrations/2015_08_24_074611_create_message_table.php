@@ -16,6 +16,7 @@ class CreateMessageTable extends Migration
             $tbl->increments('id');
             $tbl->string('name', 40);
             $tbl->string('email', 60);
+            $tbl->string('image', 200);
             $tbl->text('message');
             $tbl->boolean('status');
             $tbl->timestamps();

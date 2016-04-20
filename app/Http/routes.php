@@ -27,32 +27,31 @@ Route::post('/message', 'PublicContoller@makeContactRequest');
 
 
 Route::controllers([
-      'diary'   =>    'DiaryController'
-  ]);
+    'diary' => 'DiaryController'
+]);
 
 Route::get('profile/{id}', 'ProfileController@index');
 
 
-
-Route::group(['middleware'=>'auth', 'namespace'=>'Admin', 'prefix'=>'admin'], function(){
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::controllers([
-        'diary'     =>      'DiaryController',
-        'resume'    =>      'WorkEduController',
-        'users'     =>      'UsersController'
+        'diary' => 'DiaryController',
+        'resume' => 'WorkEduController',
+        'users' => 'UsersController',
+        'inbox' => 'InboxController'
     ]);
 
-    get('/', function(){
+    get('/', function () {
         return view('admin.layouts.master', [
-          'pageInfo'=>[
-            'siteTitle'=>'Dashboard',
-            'pageHeading'=>'Dashboard',
-            'pageHeadingSlogan'=>'I write here what I learn']
-
-          ]);
+            'pageInfo' => [
+                'siteTitle' => 'Dashboard',
+                'pageHeading' => 'Dashboard',
+                'pageHeadingSlogan' => 'I write here what I learn']
+        ]);
     });
 });
 
-Route::get('login','LoginController@loginPage');
+Route::get('login', 'LoginController@loginPage');
 
 Route::get('logout', 'LoginController@logout');
 
@@ -67,14 +66,8 @@ Route::get('callback/google', 'LoginController@callbackGoogle');
 Route::get('callback/twitter', 'LoginController@callbackTwitter');
 
 
-get('/tags', function(Tagx $tag){
-    // if($tag->saveTagged('2, 3, 1', 1)){
-    //     echo 'Success';
-    // }else{
-    //     echo 'failure';
-    // }
-
-    $a=explode(',','');
+get('/tags', function (Tagx $tag) {
+    $a = explode(',', '');
     dd($a);
 
 

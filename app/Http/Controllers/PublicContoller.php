@@ -80,6 +80,7 @@ class PublicContoller extends Controller
         $msg=new Messages;
         $msg->name=$req->input('name');
         $msg->email=$req->input('email');
+        $msg->image=$req->input('email');
         $msg->message=$req->input('message');
         $msg->status=0;
 

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Event;
+
+use App\Events\ChangeRoleEvent;
 
 use App\Models\User;
 
@@ -49,6 +52,7 @@ class UsersController extends Controller
             $user=User::findOrFail($user);
             $user->role=strtolower($role);
             if($user->save()){
+                Event::fire(new ChangeRoleEvent($user));
                 return redirect()->back();
             }
 
