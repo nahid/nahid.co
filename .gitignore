@@ -1,5 +1,7 @@
 /vendor
 /public/media
 /node_modules
+.env
+.DS_Store
 Homestead.yaml
 Homestead.json
