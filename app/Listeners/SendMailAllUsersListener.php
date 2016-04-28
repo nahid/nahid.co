@@ -35,7 +35,7 @@ class SendMailAllUsersListener
 
         foreach($users as $user){
             $user=$user->toArray();
-            Mail::queue('email.new_diary', ['diary'=>$diary->toArray(), 'author'=>$dairy->user->toArray(), 'user'=>$user], function($m) use($user){
+            Mail::queue('email.new_diary', ['diary'=>$diary->toArray(), 'author'=>$diary->user->toArray(), 'user'=>$user], function($m) use($user){
                   $m->to($user['email'], $user['name'])->subject("A new diary was published! Welcome to nahid.co ");
             });
         }
