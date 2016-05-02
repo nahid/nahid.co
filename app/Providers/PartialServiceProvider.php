@@ -57,11 +57,16 @@ class PartialServiceProvider extends ServiceProvider
             $recent=Diary::where('status', 1)->orderBy('created_at','desc')->take(5)->get(['title', 'id']);
             Cache::put('_recent', $recent, 60);
         }
+        if(!Cache::has('_popular')){
+            $recent=Diary::where('status', 1)->orderBy('visits','desc')->take(5)->get(['title', 'id']);
+            Cache::put('_popular', $recent, 60);
+        }
             view()->composer('site.partials.sidebar', function($view){
                 $view->with('navData', [
                     'category'=>Cache::get('_category'),
                     'recents'=>Cache::get('_recent'),
-                    'tags'=>Cache::get('_tags')
+                    'tags'=>Cache::get('_tags'),
+                    'populars' => Cache::get('_popular')
                     ]);
             });
 

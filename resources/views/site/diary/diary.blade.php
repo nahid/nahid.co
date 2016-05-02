@@ -51,6 +51,21 @@
 </div>
 <!-- end post -->
 @endforeach
+    @if(isset($tags))
+        @if(count($data)<1)
+                <h3>Sorry we did'nt found any article from your desire query</h3>
+                <h4>But maybe these tags can help to you</h4>
+        <div class="post">
+            <aside class="diary-tags">
+                <div class="tagcloud">
+                    @foreach($tags as $tag)
+                        <a href="{{url('diary/tag/'.$tag->tag_name)}}" class="hover-animate">{{$tag->tag_name}}</a>
+                    @endforeach
+                </div>
+            </aside>
+        </div>
+        @endif
+    @endif
 
 
 <!-- start pagination -->

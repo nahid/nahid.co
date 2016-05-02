@@ -771,7 +771,7 @@ a:hover, a:visited, a:focus, a:active{
     overflow: hidden;
 }
 .blog .post .photo img, .blog .post.one-post img{
-    width:100%;
+    width-max:100%;
     position: relative;
     webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
@@ -1196,4 +1196,9 @@ pre{
 .title-link, .title-link:hover{
   text-decoration: none;
   color:inherit;
+}
+
+
+.search-box{
+    margin-top: -0em;
 }
