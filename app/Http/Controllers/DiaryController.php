@@ -118,4 +118,38 @@ class DiaryController extends Controller
        $tags = Tags::select(DB::raw('id as value, tag_name as text'))->get();
        return response()->json($tags);
    }
+
+    public function getSearch(Request $req)
+    {
+        $query = rawurldecode($req->input('q'));
+        $words = explode(' ', $query);
+        $skipKeywords = ['in', 'are', 'of', 'at', 'a', 'is', 'to', 'an', 'for', 'and', 'or', 'with'];
+        $tags = [];
+
+        $keywords = array_diff($words, $skipKeywords);
+
+        $diary = Diary::with('tags')->where(function($q) use($keywords) {
+            foreach($keywords as $tag) {
+                $q->orWhere('diary.title', 'like', '%'.$tag.'%');
+            }
+        })->where('diary.status', 1)->orderBy('title', 'asc')->paginate(10);
+
+        if(count($diary)<1) {
+            $tags = Tags::where(function($q) use($words){
+                foreach ($words as $word) {
+                    $q->orWhere('tag_name', 'like', '%' . $word . '%');
+                }
+            })->get(['tag_name', 'id']);
+        }
+
+        return view('site.diary.diary', [
+            'pageInfo'=>[
+                'pageLogo'=>'diary',
+                'siteTitle'=>'Search | '. $query,
+                'pageHeading'=>'Search | '. $query,
+                'pageHeadingSlogan'=>'Search everything what I write'],
+            'data'=>$diary,
+            'tags'=>$tags
+        ]);
+    }
 }

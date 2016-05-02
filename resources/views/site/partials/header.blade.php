@@ -81,7 +81,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -113,7 +113,19 @@
               @if(Auth::guest())
                 <li><a href="{{url('login')}}">Login</a></li>
               @endif
+
+
             </ul>
+              <div class="col-sm-3 col-md-3">
+                  <form class="navbar-form" role="search" method="get" action="{{url('diary/search')}}">
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search What I Write" name="q">
+                          <div class="input-group-btn">
+                              <button class="btn btn-default search-box" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
