@@ -108,6 +108,4 @@
 
 
 </body>
-
-<!-- Mirrored from ukieweb.com/envato/ukiecard/style1/blog.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 12 Aug 2015 11:18:26 GMT -->
 </html>
