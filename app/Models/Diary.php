@@ -9,6 +9,11 @@ class Diary extends Model
     protected $table="diary";
     public $timestamps=true;
 
+    public function getTitleSlugAttribute()
+    {
+        return strtolower(str_slug($this->title));
+    }
+
     public function category(){
       return $this->belongsTo('App\Models\Category', 'category_id');
     }

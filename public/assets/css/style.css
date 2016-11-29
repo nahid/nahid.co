@@ -24,11 +24,9 @@ Author:	Ukieweb
 /* ------------------
     General setting
 --------------------*/
-*{
+body {
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
     font-weight: 300;
-}
-body {
     font-size: 16px;
     line-height: 24px;
     margin: 0 auto;

@@ -39,7 +39,7 @@ return [
     'facebook' => [
       'client_id' => '147238062044135',
       'client_secret' => '616d4979826bde1ac337baeeeae345af',
-      'redirect' => 'http://localhost:8000/callback/facebook',
+      'redirect' => 'http://nahid.app/callback/facebook',
     ],
 
     'github' => [

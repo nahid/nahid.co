@@ -13,6 +13,7 @@ use Image;
 use Markdown;
 use DB;
 use Event;
+use Cache;
 
 use App\Http\Requests\DiaryCreateRequest;
 use App\Http\Requests\CommentsCreateRequest;
@@ -22,11 +23,18 @@ use App\Models\Diary;
 use App\Models\Category;
 use App\Models\Comments;
 use App\Models\Tags;
+use App\Models\Tagged;
 
 
 
 class DiaryController extends Controller
 {
+
+  function __construct()
+  {
+      $this->sidebarCategory();
+  }
+
    public function getIndex(){
      $diary=Diary::where('status', 1)->where('category_id', '!=', 7)->with(['tags'])->orderBy('created_at', 'desc')->paginate(10);
 
@@ -44,7 +52,7 @@ class DiaryController extends Controller
 
 
 
-   public function getRead(Request $req, $id){
+   public function getRead(Request $req, $id, $slag = null){
        $diary=Diary::with(['comments', 'tags'])->find($id);
 
        if($diary->status==0){
@@ -151,5 +159,39 @@ class DiaryController extends Controller
             'data'=>$diary,
             'tags'=>$tags
         ]);
+    }
+
+
+
+    // pertials
+
+       protected function sidebarCategory(){
+        if(!Cache::has('_tags')){
+            $tags=Tagged::join('tags', 'tagged.tag_id','=', 'tags.id')->select('tags.id', DB::raw('count(tag_id) as total_tags'), 'tags.tag_name')->groupBy('tagged.tag_id')->take(20)->get();
+            Cache::put('_tags', $tags, 60);
+        }
+
+        if(!Cache::has('_category')){
+            $category=Category::get();
+            Cache::put('_category', $category, 60);
+        }
+
+        if(!Cache::has('_recent')){
+            $recent=Diary::where('status', 1)->orderBy('created_at','desc')->take(5)->get(['title', 'id']);
+            Cache::put('_recent', $recent, 60);
+        }
+        if(!Cache::has('_popular')){
+            $recent=Diary::where('status', 1)->orderBy('visits','desc')->take(5)->get(['title', 'id']);
+            Cache::put('_popular', $recent, 60);
+        }
+            view()->composer('site.partials.sidebar', function($view){
+                $view->with('navData', [
+                    'category'=>Cache::get('_category'),
+                    'recents'=>Cache::get('_recent'),
+                    'tags'=>Cache::get('_tags'),
+                    'populars' => Cache::get('_popular')
+                    ]);
+            });
+
     }
 }

@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <title>Admin | {{$pageInfo['siteTitle']}} - NAH!D</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+        <script type="text/javascript">
+          var _baseUrl = "{{url('/')}}";
+        </script>
         <!-- bootstrap 3.0.2 -->
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link type="text/css" media="all" href="{{asset('assets/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />

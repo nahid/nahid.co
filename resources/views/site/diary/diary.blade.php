@@ -7,13 +7,13 @@
 <div class="post">
     <!-- start photo -->
     <div class="photo">
-        <a href="{{url('diary/read/'.$diary->id)}}">
+        <a href="{{url('diary/read/'.$diary->id . '/' . $diary->title_slug)}}">
             <img src="{{asset('media/diary/'.$diary->featured_image)}}" alt="{{$diary->title}}">
         </a>
     </div>
     <!-- end photo -->
     <!-- start title post -->
-    <a class="h3 title-link" href="{{url('diary/read/'.$diary->id)}}">
+    <a class="h3 title-link" href="{{url('diary/read/'.$diary->id . '/' . $diary->title_slug)}}">
         <h3 class="title title-blog">{{$diary->title}}</h3>
     </a>
     <!-- end title post -->
@@ -47,7 +47,7 @@
         @endforeach
     </div>
     </aside>
-    <a href="{{url('diary/read/'.$diary->id)}}" class="btn btn-info hover-animate btn-color-hover">Read More</a>
+    <a href="{{url('diary/read/'.$diary->id . '/' . $diary->title_slug)}}" class="btn btn-info hover-animate btn-color-hover">Read More</a>
 </div>
 <!-- end post -->
 @endforeach

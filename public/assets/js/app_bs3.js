@@ -4,7 +4,7 @@ var tags = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   prefetch:{
-      url:'http://localhost:8000/diary/tags'
+      url: _baseUrl + '/diary/tags'
   }
 });
 tags.initialize();
